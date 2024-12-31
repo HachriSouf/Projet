@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./auth-service:/app
+    ports:
+      - 3000:3000
+    env_file:
+      - ./auth-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      auth-db:
+        condition: service_healthy
+
+  auth-db:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: auth_db
+    volumes:
+      - ./auth-db/data:/data/db                  
+      - ./auth-db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d  
+    networks:
+      - shrp-ntwrk
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.runCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+networks:
+  shrp-ntwrk:
+    driver: bridge
