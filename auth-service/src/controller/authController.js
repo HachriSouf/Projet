@@ -1,5 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+const bcrypt = require("bcryptjs");
+
 
 // Register a new user
 exports.register = async (req, res) => {
@@ -17,11 +19,14 @@ exports.register = async (req, res) => {
             return res.status(400).json({ message: 'User already exists' });
         }
 
-        // Create a new user without hashing the password
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+        // Create a new user with the hashed password
         const newUser = new User({
             username,
             email,
-            password  // Store the password as plain text
+            password: hashedPassword,
         });
 
         // Generate refresh token
@@ -55,9 +60,9 @@ exports.login = async (req, res) => {
             return res.status(400).json({ message: 'User not found' });
         }
 
-        // Compare the entered password with the stored password (plain text)
-        if (password !== user.password) {
-            return res.status(400).json({ message: 'Invalid credentials' });
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            return res.status(400).json({ message: "Invalid credentials" });
         }
 
         // Generate access token (short-lived)

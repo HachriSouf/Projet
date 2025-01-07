@@ -91,4 +91,23 @@ if (!Number) console.log("Missing Number");
   }
 });
 
+router.get("/healthcheck", async (req, res) => {
+  try
+  { 
+  const promises = 
+  [ 
+  authService.get("/"),
+  customerService.get("/")
+  ]; 
+
+await Promise.all(promises);
+
+return res.status(201).json({ message: "It's all right !" });
+}
+catch(err){
+  console.error(err);
+  res.status(500).json({ message: 'Services didnt start !' });
+}
+});
+
 module.exports = router;
