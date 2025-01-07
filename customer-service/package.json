@@ -1,0 +1,16 @@
+{
+  "name": "customer-service",
+  "version": "1.0.0",
+  "description": "Service de customer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^6.13.5"
+  },
+  "author": "",
+  "license": "ISC"
+}
