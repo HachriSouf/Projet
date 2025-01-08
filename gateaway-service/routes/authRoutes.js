@@ -91,6 +91,57 @@ if (!Number) console.log("Missing Number");
   }
 });
 
+
+router.post("/login", async (req, res) => {
+  try {
+    const resultat = await authService.post("/auth/login", req.body, {
+      headers: { Authorization: req.header("Authorization") }, // Header facultatif
+    });
+
+    return res.json(resultat.data);
+
+  } catch (error) {
+    console.error("Error occurred:", error.message);
+
+    if (error.response) {
+      console.log("Error response data:", error.response.data);
+      return res.status(error.response.status).json({
+        error: error.response.data,
+      });
+    }
+
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+
+
+router.post("/sign-out", async (req, res) => {
+  try {
+    const resultat = await authService.post("/auth/logout", req.body, {
+      headers: { Authorization: req.header("Authorization") }, 
+    });
+    console.log(resultat.data);
+    return res.json(resultat.data);
+
+  } catch (error) {
+    console.error("Error occurred:", error.message);
+
+    if (error.response) {
+      console.log("Error response data:", error.response.data);
+      return res.status(error.response.status).json({
+        error: error.response.data,
+      });
+    }
+
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+
+
 router.get("/healthcheck", async (req, res) => {
   try
   { 
@@ -110,4 +161,8 @@ catch(err){
 }
 });
 
+
+
+
 module.exports = router;
+
