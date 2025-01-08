@@ -91,6 +91,86 @@ if (!Number) console.log("Missing Number");
   }
 });
 
+
+router.post("/login", async (req, res) => {
+  try {
+    const resultat = await authService.post("/auth/login", req.body, {
+      headers: { Authorization: req.header("Authorization") }, // Header facultatif
+    });
+
+    return res.json(resultat.data);
+
+  } catch (error) {
+    console.error("Error occurred:", error.message);
+
+    if (error.response) {
+      console.log("Error response data:", error.response.data);
+      return res.status(error.response.status).json({
+        error: error.response.data,
+      });
+    }
+
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+
+
+router.post("/sign-out", async (req, res) => {
+  try {
+    const resultat = await authService.post("/auth/logout", req.body, {
+      headers: { Authorization: req.header("Authorization") }, 
+    });
+    console.log(resultat.data);
+    return res.json(resultat.data);
+
+  } catch (error) {
+    console.error("Error occurred:", error.message);
+
+    if (error.response) {
+      console.log("Error response data:", error.response.data);
+      return res.status(error.response.status).json({
+        error: error.response.data,
+      });
+    }
+
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.get("/verify", async (req, res) => {
+  try {
+    // Extraire le token du header Authorization
+    const token = req.header("Authorization") && req.header("Authorization").split(" ")[1];
+    if (!token) {
+      return res.status(401).json({ message: "No token provided" });
+    }
+
+    // Appeler le service d'authentification pour vérifier le token avec le bon header
+    const verifyResult = await authService.get("/auth/verify", {
+      headers: { Authorization: `Bearer ${token}` }, // Passer le token correctement
+    });
+
+    // Retourner le résultat de la vérification au client
+    res.status(200).json(verifyResult.data);
+  } catch (error) {
+    console.error("Error during token verification:", error.message);
+
+    if (axios.isAxiosError(error)) {
+      return res.status(error.response?.status || 500).json({
+        message: error.response?.data?.message || "Error verifying token with auth service.",
+      });
+    }
+
+    res.status(500).json({ message: "An unexpected error occurred." });
+  }
+});
+
+
+
+
+
 router.get("/healthcheck", async (req, res) => {
   try
   { 
@@ -110,4 +190,8 @@ catch(err){
 }
 });
 
+
+
+
 module.exports = router;
+

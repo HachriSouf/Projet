@@ -61,6 +61,7 @@ exports.login = async (req, res) => {
         }
 
         const isPasswordValid = await bcrypt.compare(password, user.password);
+       
         if (!isPasswordValid) {
             return res.status(400).json({ message: "Invalid credentials" });
         }
@@ -108,15 +109,15 @@ exports.verify = async (req, res) => {
 };
 
 exports.logout = async (req, res) => {
-    const { refreshToken } = req.body;
-
     try {
+        const { refreshToken } = await req.body;
+        console.log(refreshToken);
         const user = await User.findOne({ refreshToken });
+
         if (!user) {
             return res.status(400).json({ message: 'Invalid refresh token' });
         }
 
-        // Remove refresh token from user document
         user.refreshToken = null;
         await user.save();
 
