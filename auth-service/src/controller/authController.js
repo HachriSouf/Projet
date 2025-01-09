@@ -152,3 +152,29 @@ exports.me = async (req, res) => {
         res.status(400).json({ message: 'Invalid token or server error' });
     }
 };
+
+exports.deleteUser = async (req, res) => {
+    try {
+        const { username } = req.body;  // Récupère l'username dans le corps de la requête
+
+        // Vérifie si l'utilisateur existe
+        const user = await User.findOne({ username });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });  // Si l'utilisateur n'est pas trouvé
+        }
+
+        // Supprimer l'utilisateur de la base de données
+        await User.deleteOne({ username });
+
+        // Retourne une réponse de succès
+        return res.status(200).json({ message: "User deleted successfully" });
+    } catch (err) {
+        // Capture et logge l'erreur
+        console.error('Error during user deletion:', err);
+        
+        // En cas d'erreur serveur
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+  

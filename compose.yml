@@ -64,9 +64,9 @@ services:
       - shrp-ntwrk
     depends_on:
       auth-service:
-        condition: service_healthy
+        condition: service_started  
       customer-service:
-        condition: service_healthy
+        condition: service_started  
 
 networks:
   shrp-ntwrk:

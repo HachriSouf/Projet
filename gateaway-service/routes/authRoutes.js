@@ -167,6 +167,75 @@ router.get("/verify", async (req, res) => {
   }
 });
 
+router.get("/me", async (req, res) => {
+  try {
+    const token = req.header("Authorization") && req.header("Authorization").split(" ")[1];
+    if (!token) {
+      return res.status(401).json({ message: "No token provided" });
+    }
+
+    const userResult = await authService.get("/auth/me", {
+      headers: { Authorization: `Bearer ${token}` }, // Passer le token correctement
+    });
+
+    res.status(200).json(userResult.data);
+  } catch (error) {
+    console.error("Error in /me endpoint:", error.message);
+
+    if (axios.isAxiosError(error)) {
+      return res.status(error.response?.status || 500).json({
+        message: error.response?.data?.message || "Error in auth service.",
+      });
+    }
+
+    res.status(500).json({ message: "An unexpected error occurred." });
+  }
+});
+
+// Route pour supprimer un utilisateur via le service Gateway
+router.delete("/delete", async (req, res) => {
+  const token = req.header("Authorization") && req.header("Authorization").split(" ")[1]; // Récupère le token JWT depuis les headers
+
+  if (!token) {
+      return res.status(401).json({ message: "No token provided" }); // Si aucun token n'est fourni
+  }
+
+  try {
+      // Supprimer dans l'auth-service
+      const authResponse = await authService.delete("/auth/delete", {
+          headers: { Authorization: `Bearer ${token}` }, // Envoie du token JWT dans les headers
+          data: req.body, // Passe les données du corps de la requête (email)
+      });
+
+      // Supprimer dans le customer-service
+      const custResponse = await customerService.delete("/customer/delete-customer", {
+          headers: { Authorization: `Bearer ${token}` }, // Envoie du token JWT dans les headers
+          data: req.body, // Passe les données du corps de la requête (username)
+      });
+
+      // Si les deux suppressions réussissent, renvoyer une réponse de succès
+      return res.status(200).json({
+          message: "User and customer deleted successfully",
+          authService: authResponse.data,
+          customerService: custResponse.data,
+      });
+  } catch (error) {
+      console.error("Error during deletion:", error);
+
+      // Gérer les erreurs des services individuellement
+      if (error.response) {
+          return res.status(error.response.status).json({
+              message: "Error from service",
+              details: error.response.data,
+          });
+      }
+
+      // Erreur interne si quelque chose se passe mal
+      return res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+
 
 
 
