@@ -1,1 +1,15 @@
+<<<<<<< HEAD
 .vs/
+=======
+# Node.js
+npm-debug.log*
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Docker
+docker-compose.override.yml
+node_modules
+>>>>>>> 72ac4ae043e184b60367045de3225a7537f5ce66
