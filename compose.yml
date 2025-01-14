@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./customer-service:/app
+      - ./node_modules:/app/node_modules
     ports:
       - "5000:5000"
     env_file:
@@ -22,6 +23,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./auth-service:/app
+      - ./node_modules:/app/node_modules
     ports:
       - "3000:3000"
     env_file:
@@ -38,9 +40,6 @@ services:
       MONGO_INITDB_DATABASE: mydb  
     ports:
       - "27017:27017"  
-    volumes:
-      - ./mongo-db/data:/data/db
-      - ./mongo-db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     networks:
       - shrp-ntwrk
     healthcheck:
@@ -56,6 +55,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./gateaway-service:/app
+      - ./node_modules:/app/node_modules
     ports:
       - "8000:8000"
     env_file:
@@ -67,6 +67,38 @@ services:
         condition: service_started  
       customer-service:
         condition: service_started  
+
+  notification-service:
+    build:
+      context: ./notification-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./notification-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "3001:3001" 
+    env_file:
+      - ./notification-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+  rabbitmq:
+    image: rabbitmq:3-management
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    ports: 
+    - "5672:5672"   
+    - "15672:15672" 
+    networks:
+    - shrp-ntwrk
 
 networks:
   shrp-ntwrk:

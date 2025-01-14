@@ -1,53 +1,57 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require("bcryptjs");
+const crypto = require("crypto");
 
 
-// Register a new user
 exports.register = async (req, res) => {
     const { username, password, email } = req.body;
-
-    // Validate the input
+  
     if (!username || !password || !email) {
-        return res.status(400).json({ message: 'All fields are required' });
+      return res.status(400).json({ message: 'All fields are required' });
     }
-
+  
     try {
-        // Check if user already exists
-        const existingUser = await User.findOne({ email });
-        if (existingUser) {
-            return res.status(400).json({ message: 'User already exists' });
-        }
-
-        const saltRounds = 10;
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
-
-        // Create a new user with the hashed password
-        const newUser = new User({
-            username,
-            email,
-            password: hashedPassword,
-        });
-
-        // Generate refresh token
-        const refreshToken = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
-
-        // Save the refresh token in the user document
-        newUser.refreshToken = refreshToken;
-
-        // Save the new user in the database
-        await newUser.save();
-
-        // Create access token (short-lived)
-        const accessToken = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-
-        // Send the tokens to the client
-        res.status(201).json({ message: 'User created successfully', accessToken, refreshToken });
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        return res.status(400).json({ message: 'User already exists' });
+      }
+  
+      const saltRounds = 10;
+      const hashedPassword = await bcrypt.hash(password, saltRounds);
+  
+      const generateOpaqueToken = (length = 32) =>
+        crypto.randomBytes(length).toString("hex");
+  
+      const registrationToken = generateOpaqueToken();
+  
+      const newUser = new User({
+        username,
+        email,
+        password: hashedPassword,
+        registrationToken,
+      });
+  
+      const refreshToken = jwt.sign(
+        { userId: newUser._id },
+        process.env.JWT_SECRET,
+        { expiresIn: '7d' }
+      );
+  
+      newUser.refreshToken = refreshToken;
+  
+      await newUser.save();
+  
+      res.status(201).json({
+        message: 'User created successfully',
+        refreshToken,
+        registrationToken,
+      });
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: 'Server error' });
+      console.error(err);
+      res.status(500).json({ message: 'Server error' });
     }
-};
+  };
 
 
 exports.login = async (req, res) => {
@@ -74,6 +78,7 @@ exports.login = async (req, res) => {
 
         // Store the refresh token in the user document
         user.refreshToken = refreshToken;
+        user.lastSignedAt = new Date();
         await user.save();
 
         // Send the tokens to the client
@@ -175,6 +180,7 @@ exports.deleteUser = async (req, res) => {
         // En cas d'erreur serveur
         res.status(500).json({ message: "Server error" });
     }
+
+
 };
 
-  
