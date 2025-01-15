@@ -1,7 +1,6 @@
 const axios = require("axios");
 const jwt = require("jsonwebtoken");
 
-const AUTH_SERVICE_URL = "http://auth-service:3000"; 
 
 const authMiddleware = async (req, res, next) => {
   try {

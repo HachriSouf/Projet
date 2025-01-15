@@ -5,6 +5,7 @@ const CustomerSchema = new mongoose.Schema({
   FirstName: { type: String, required: true },
   LastName: { type: String, required: true },
   Number: { type: Number, required: true },
+  registrationToken: {type: String, default:null}
 });
 
 const Customer = mongoose.model('Customer', CustomerSchema);
