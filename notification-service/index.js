@@ -1,5 +1,7 @@
 const AMQPService = require("./Services/AMQPService");
 const sendMail = require("./Services/MailService");
+const fs = require("fs");
+const path = require("path");
 
 const MESSAGE_BROKER = process.env.MESSAGE_BROKER;
 const MESSAGE_BROKER_USER = process.env.MESSAGE_BROKER_USER;
@@ -22,11 +24,43 @@ const readFromQueue = async () => {
         const customer = JSON.parse(msg.content.toString());
         console.log("Processing customer data:", customer);
 
-        const htmlMessage = `<p>Welcome ${customer.FirstName} ${customer.LastName} !<br>Please, <a href='http://localhost:8000/api/double-opt-in?t=${customer.registrationToken}'>visit this link to confirm your registration</a></p>`;
-        const textMessage = `Welcome ${customer.FirstName} ${customer.LastName} ! Please, visit http://localhost:8000/api/double-opt-in?t=${customer.registrationToken} to confirm your registration.`;
+        // Read image and encode it in Base64
+        const imagePath = path.join(__dirname, "image.png");
+        const imageBase64 = fs.readFileSync(imagePath, "base64");
+        const imageSrc = `data:image/png;base64,${imageBase64}`;
+
+        const htmlMessage = `
+          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+            <div style="text-align: center;">
+              <img src="${imageSrc}" alt="Logo" style="width: 100px; margin-bottom: 20px;" />
+            </div>
+            <h1 style="text-align: center; color: #007BFF;">Welcome to The Real Deal!</h1>
+            <p>Hi <strong>${customer.FirstName} ${customer.LastName}</strong>,</p>
+            <p>We are thrilled to have you with us. Please confirm your registration by clicking the link below:</p>
+            <div style="text-align: center; margin: 20px 0;">
+              <a href='http://localhost:8000/api/double-opt-in?t=${customer.registrationToken}'
+                 style="display: inline-block; background-color: #007BFF; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; font-size: 16px;">Confirm Registration</a>
+            </div>
+            <p>If you didn’t request this, please ignore this email.</p>
+            <p>Thank you,<br/>The Real Deal Team</p>
+            <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+            <p style="font-size: 12px; text-align: center; color: #777;">
+              This email was sent to <a href="mailto:${customer.email}" style="color: #007BFF;">${customer.email}</a>. If you have any questions, please contact our support team.
+            </p>
+          </div>`;
+
+        const textMessage = `Welcome ${customer.FirstName} ${customer.LastName}!
+We are thrilled to have you with us. Please confirm your registration by visiting the following link:
+http://localhost:8000/api/double-opt-in?t=${customer.registrationToken}
+
+If you didn’t request this, please ignore this email.
+
+Thank you,
+The Real Deal Team`;
+
         const subject = "Welcome! Please, validate your account";
         const from = "servicesmicro46@gmail.com";
-        const fromLabel = "The_Real_Deal";
+        const fromLabel = "The Real Deal";
         const to = customer.email;
 
         try {

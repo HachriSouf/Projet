@@ -84,6 +84,9 @@ services:
     depends_on:
       rabbitmq:
         condition: service_healthy
+
+
+        
   rabbitmq:
     image: rabbitmq:3-management
     environment:
