@@ -70,6 +70,7 @@ router.post("/sign-up", async (req, res) => {
       message: "User signed up successfully",
       authResponse: authResponse.data,
       customerResponse: customerResponse.data,
+      othermessage: customerData,
     });
   } catch (error) {
     console.error("Error occurred:", error.message);
