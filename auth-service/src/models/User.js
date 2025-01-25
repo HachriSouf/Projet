@@ -6,13 +6,13 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   refreshToken: { type: String, default: null },
-  registrationToken: { type: String, default: null },
-  registratedAt: { type: Date, default: null },
-  lastSignedInAt: { type: Date, default: null },
-  createdAt: { type: Date, default: null },
-  updatedAt: { type: Date, default: null },
-  deletedAt: { type: Date, default: null }
-});
+  registrationToken: {type: String, default:null},
+  lastSignedAt: { type: String, default: null },
+  createdAt: {type: Date, default: Date.now},
+  registeredAt: {type: Date},
+  deletedAt: {type: Date},
+  updateAt:{type: Date}
+},{ timestamps: true });
 
 
 const User = mongoose.model('User', userSchema);

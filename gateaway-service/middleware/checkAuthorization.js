@@ -1,12 +1,12 @@
 const axios = require("axios");
 const jwt = require("jsonwebtoken");
 
-const AUTH_SERVICE_URL = "http://auth-service:3000"; 
 
 const authMiddleware = async (req, res, next) => {
   try {
 
     const token = req.header('Authorization') && req.header('Authorization').split(' ')[1];
+    
     if (!token) {
         return res.status(401).json({ message: 'No token provided' });
     }
