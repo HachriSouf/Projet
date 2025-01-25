@@ -36,6 +36,23 @@ const sendCustomerCreatedMessageToQueue = async (customer) => {
   }
 };
 
+const sendCustomerRegistratedMessageToQueue = async (user) => {
+  const amqpService = new AMQPService(
+    `amqp://${process.env.MESSAGE_BROKER_USER}:${process.env.MESSAGE_BROKER_PASSWORD}@${process.env.MESSAGE_BROKER}`
+  );
+
+  try {
+    await amqpService.connect();
+    await amqpService.sendToQueue("customer_registrated", JSON.stringify(user));
+    console.log("Message sent to queue: customer_registrated");
+  } catch (error) {
+    console.error("Error sending message to RabbitMQ:", error.message);
+  } finally {
+    setTimeout(async () => {
+      await amqpService.close(); 
+    }, 5000);
+  }
+};
 
 
 router.post("/sign-up", async (req, res) => {
@@ -81,6 +98,40 @@ router.post("/sign-up", async (req, res) => {
   }
 });
 
+router.get("/double-opt-in", async (req, res) => {
+  const { t: registrationToken } = req.query;
+  
+  console.log("Query parameters:", req.query);
+  console.log("Extracted registrationToken:", registrationToken);
+
+  if (!registrationToken) {
+    return res.status(400).json({ message: "Registration token is required." });
+  }
+
+  try {
+    console.log("Making request to auth service for double opt-in...");
+    const authResponse = await authService.get(`/auth/double-opt-in?t=${registrationToken}`);
+
+    const user = authResponse.data.user;
+
+    await sendCustomerRegistratedMessageToQueue({user});
+
+    res.status(200).json({
+      message: "Account successfully confirmed.",
+      user,
+    });
+  } catch (error) {
+    console.error("Error during double opt-in:", error.message);
+
+    if (error.response) {
+      return res.status(error.response.status).json({
+        error: error.response.data,
+      });
+    }
+
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 
 router.post("/login", async (req, res) => {
@@ -129,6 +180,9 @@ router.post("/sign-out", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
+
 
 router.get("/verify", async (req, res) => {
   try {

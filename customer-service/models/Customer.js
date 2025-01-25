@@ -5,6 +5,9 @@ const CustomerSchema = new mongoose.Schema({
   FirstName: { type: String, required: true },
   LastName: { type: String, required: true },
   Number: { type: Number, required: true },
+  createdAt: {type: Date, default: Date.now},
+  deletedAt: {type: Date},
+  updateAt:{type: Date}
 });
 
 const Customer = mongoose.model('Customer', CustomerSchema);

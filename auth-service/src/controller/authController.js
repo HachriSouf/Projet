@@ -184,3 +184,36 @@ exports.deleteUser = async (req, res) => {
 
 };
 
+exports.doubleOptIn = async (req, res) => {
+    const { t: registrationToken } = req.query;
+
+    console.log("Query parameters:", req.query);
+
+    console.log("Extracted registrationToken:", registrationToken);
+
+    if (!registrationToken) {
+        return res.status(400).json({ message: 'Registration token is required' });
+    }
+
+    try {
+        const existingUser = await User.findOne({ registrationToken });
+
+        if (!existingUser) {
+            return res.status(404).json({ message: 'Invalid or expired token' });
+        }
+
+        existingUser.registratedAt = new Date(); 
+        existingUser.registrationToken = null; 
+        await existingUser.save(); 
+
+        const { password, ...userWithoutPassword } = existingUser.toObject(); 
+
+        res.status(200).json({ 
+            message: 'Account successfully confirmed', 
+            user: userWithoutPassword, 
+        }); 
+    } catch (error) { 
+        console.error('Error during double opt-in:', error); 
+        res.status(500).json({ message: 'Server error' }); 
+    } 
+}; 
