@@ -9,6 +9,29 @@ const authService = axios.create({
     timeout: 5000,
     headers: { "Content-Type": "application/json" },
   });
+  const customerService = axios.create({
+    baseURL: "http://trd_project-customer-service-1:5000",
+    timeout: 5000,
+    headers: { "Content-Type": "application/json" },
+  });
+
+  const sendPayementSucessMessageToQueue = async (transaction) => {
+    const amqpService = new AMQPService(
+      `amqp://${process.env.MESSAGE_BROKER_USER}:${process.env.MESSAGE_BROKER_PASSWORD}@${process.env.MESSAGE_BROKER}`
+    );
+  
+    try {
+      await amqpService.connect();
+      await amqpService.sendToQueue("payement_sucess", JSON.stringify(transaction));
+      console.log("Message sent to queue: payement_sucess");
+    } catch (error) {
+      console.error("Error sending message to RabbitMQ:", error.message);
+    } finally {
+      setTimeout(async () => {
+        await amqpService.close(); 
+      }, 5000);
+    }
+  };
 
 exports.processPayment = async (req, res) => {
   const token = req.header("Authorization") && req.header("Authorization").split(" ")[1];
@@ -22,36 +45,28 @@ exports.processPayment = async (req, res) => {
 });
 
 const userId = authResponse.data.user._id;
+const username = authResponse.data.user.username;
+
+
   if (!amount || amount <= 10) {
     return res.status(400).json({ message: "Amount must be greater than 10 euros" });
   }
-console.log("error",req.body);
+
   try {
-    // Step 1: Verify User
 
-
-    
-
-    // Save card details (if needed)
     const card = new Card({
       cardHolderName: cardHolderName,
       cardNumber: cardNumber,
       expiryDate: expiryDate,
       cvv: cvv,
+
     });
     await card.save();
-
-    // Step 3: Save Transaction
     const transaction = new Transaction({
       userId,
       amount,
     });
     await transaction.save();
-
-    // Step 4: Send Message to Queue
-    const amqpService = new AMQPService(
-      `amqp://${process.env.MESSAGE_BROKER_USER}:${process.env.MESSAGE_BROKER_PASSWORD}@${process.env.MESSAGE_BROKER}`
-    );
 
     const message = {
       userId,
@@ -59,18 +74,18 @@ console.log("error",req.body);
       transactionId: transaction._id,
       transactionDate: transaction.transactionDate,
     };
+    const customerResponse = await customerService.get(`/customer/${username}`);
+    const currentBalance = customerResponse.data.customer.balance;
 
-    try {
-      await amqpService.connect();
-      await amqpService.sendToQueue("payment_success", JSON.stringify(message));
-      console.log("Payment success message sent to queue");
-    } catch (error) {
-      console.error("Error sending message to RabbitMQ:", error.message);
-    } finally {
-      setTimeout(async () => {
-        await amqpService.close();
-      }, 5000);
-    }
+    const newBalance = currentBalance + amount;
+    await customerService.put(`/customer/${username}`, { balance: newBalance });
+
+    console.log(`Balance updated for user ${username}: ${newBalance}`);
+
+    const sentMessage = { ...message, newBalance,  email: authResponse.data.user.email};
+    
+    sendPayementSucessMessageToQueue(sentMessage);
+   
 
     res.status(200).json({ message: "Payment processed successfully", transaction });
   } catch (err) {

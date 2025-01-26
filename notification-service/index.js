@@ -166,7 +166,7 @@ The Real Deal Team`;
         const subject = "Bet Confirmation";
         const from = "servicesmicro46@gmail.com";
         const fromLabel = "The Real Deal";
-        const to = bet.userEmail || "placeholder@example.com"; // Remplace par l'email réel de l'utilisateur
+        const to = bet.email || "placeholder@example.com"; // Remplace par l'email réel de l'utilisateur
 
         try {
           sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
@@ -178,14 +178,61 @@ The Real Deal Team`;
         console.log("No message received from queue: bet_created.");
       }
     });
-    
+  ////////////////////  
+  await amqpService.consumeFromQueue("payement_sucess", async (msg) => {
+    if (msg) {
+      console.log("Message received from queue: payement_sucess");
+      const payment = JSON.parse(msg.content.toString());
+      console.log("Processing payment data:", payment);
+
+      // Préparer l'email
+      const htmlMessage = `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+          <div style="text-align: center;">
+          <img src="data:image/png;base64,${imageBase64}" alt="Logo" style="width: 100px; margin-bottom: 20px;" />
+            <h1 style="color: #28a745;">Payment Successful!</h1>
+            <p>Hi <strong>${payment.userId}</strong>,</p>
+            <p>Your payment of <strong>€${payment.amount}</strong> has been processed successfully.</p>
+            <p>Your new balance is: <strong>€${payment.newBalance}</strong>.</p>
+            <p>Thank you for trusting <strong>The Real Deal</strong>.</p>
+            <p>Best regards,<br/>The Real Deal Team</p>
+          </div>
+        </div>`;
+
+      const textMessage = `Payment Successful!
+        Hi ${payment.userId},
+
+          Your payment of €${payment.amount} has been processed successfully.
+          Your new balance is: €${payment.newBalance}.
+
+          Thank you for trusting The Real Deal.
+
+          Best regards,
+          The Real Deal Team`;
+
+      const subject = "Payment Confirmation";
+      const from = "servicesmicro46@gmail.com";
+      const fromLabel = "The Real Deal";
+      const to = payment.email || "placeholder@example.com"; 
+
+      try {
+        await sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
+        console.log("Payment confirmation email sent successfully to:", to);
+      } catch (error) {
+        console.error("Error sending payment confirmation email:", error);
+      }
+    } else {
+      console.log("No message received from queue: payement_Sucess.");
+    }
+  });
+
+
+
+
   } catch (error) {
     console.error("Error during RabbitMQ connection or consumption:", error);
   }
 };
-
-/////////////////////
-
 
 (async () => {
   console.log("Starting Notification Service...");
