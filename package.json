@@ -4,6 +4,11 @@
     "auth-service",
     "customer-service",
     "gateaway-service",
-   "notification-service"
+   "notification-service",
+   "betting-service",
+   "bookmaker-service",
+   "match-service",
+   "payement-service",
+   "odd-service"
   ]
 }
