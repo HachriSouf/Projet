@@ -75,7 +75,12 @@ The Real Deal Team`;
         console.log("No message received from queue: customer_created.");
       }
     });
+
+
+
 /////////////////////////////////////////
+
+
     await amqpService.consumeFromQueue("customer_registrated", (msg) => {
       if (msg) {
         console.log("Message received from queue: customer_registrated");
@@ -121,10 +126,66 @@ The Real Deal Team`;
         console.log("No message received from queue: customer_registrated.");
       }
     });
+
+    /////////////////////
+    await amqpService.consumeFromQueue("bet_created", (msg) => {
+      if (msg) {
+        console.log("Message received from queue: bet_created");
+        const bet = JSON.parse(msg.content.toString());
+        console.log("Processing bet data:", bet);
+
+        // Préparer l'email
+        const htmlMessage = `
+          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+            <div style="text-align: center;">
+              <img src="${imageSrc}" alt="Logo" style="width: 100px; margin-bottom: 20px;" />
+            </div>
+            <h1 style="text-align: center; color: #007BFF;">Bet Confirmed!</h1>
+            <p>Hi <strong>${bet.userId}</strong>,</p>
+            <p>Your bet has been successfully placed for the match between <strong>${bet.matchId}</strong>.</p>
+            <p>Amount Bet: <strong>$${bet.betAmount}</strong></p>
+            <p>Potential Win: <strong>$${bet.potentialWin}</strong></p>
+            <p>Thank you for trusting <strong>The Real Deal</strong>.</p>
+            <p>Good luck!</p>
+            <p>Best regards,<br/>The Real Deal Team</p>
+          </div>`;
+
+        const textMessage = `Your bet has been confirmed!
+Hi ${bet.userId},
+Your bet has been successfully placed for the match ${bet.matchId}.
+
+Amount Bet: $${bet.betAmount}
+Potential Win: $${bet.potentialWin}
+
+Thank you for trusting The Real Deal.
+
+Good luck!
+Best regards,
+The Real Deal Team`;
+
+        const subject = "Bet Confirmation";
+        const from = "servicesmicro46@gmail.com";
+        const fromLabel = "The Real Deal";
+        const to = bet.userEmail || "placeholder@example.com"; // Remplace par l'email réel de l'utilisateur
+
+        try {
+          sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
+          console.log("Bet confirmation email sent successfully to:", to);
+        } catch (error) {
+          console.error("Error sending bet confirmation email:", error);
+        }
+      } else {
+        console.log("No message received from queue: bet_created.");
+      }
+    });
+    
   } catch (error) {
     console.error("Error during RabbitMQ connection or consumption:", error);
   }
 };
+
+/////////////////////
+
 
 (async () => {
   console.log("Starting Notification Service...");

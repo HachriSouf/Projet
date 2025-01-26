@@ -14,7 +14,7 @@ const customerService = axios.create({
 // Créer un client
 router.post("/createCustomer", authMiddleware, async (req, res) => {
   try {
-    const response = await customerService.post("/createCustomer", req.body, {
+    const response = await customerService.post("/customer/createCustomer", req.body, {
       headers: { Authorization: req.header("Authorization") },
     });
 
@@ -28,7 +28,7 @@ router.post("/createCustomer", authMiddleware, async (req, res) => {
 // Récupérer tous les clients
 router.get("/all-customers", authMiddleware, async (req, res) => {
   try {
-    const response = await customerService.get("/all-customers", {
+    const response = await customerService.get("/customer/all-customers", {
       headers: { Authorization: req.header("Authorization") },
     });
 
@@ -44,7 +44,7 @@ router.get("/:username", authMiddleware, async (req, res) => {
   try {
     const { username } = req.params;
 
-    const response = await customerService.get(`/${username}`, {
+    const response = await customerService.get(`/customer/${username}`, {
       headers: { Authorization: req.header("Authorization") },
     });
 
@@ -76,7 +76,7 @@ router.delete("/soft-delete/:username", authMiddleware, async (req, res) => {
   try {
     const { username } = req.params;
 
-    const response = await customerService.delete(`/soft-delete/${username}`, {
+    const response = await customerService.delete(`/customer/soft-delete/${username}`, {
       headers: { Authorization: req.header("Authorization") },
     });
 
@@ -90,7 +90,7 @@ router.delete("/soft-delete/:username", authMiddleware, async (req, res) => {
 // Supprimer un client
 router.delete("/delete-customer", authMiddleware, async (req, res) => {
   try {
-    const response = await customerService.delete("/delete-customer", {
+    const response = await customerService.delete("/customer/delete-customer", {
       data: req.body,
       headers: { Authorization: req.header("Authorization") },
     });

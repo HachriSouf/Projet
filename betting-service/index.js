@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const betRoutes = require('./src/routes/betRoutes');
 
 
 const app = express();
@@ -25,6 +26,9 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.get('/', (req, res) => {
   res.send('service betting en fonctionnement!');
 });
+
+app.use('/bet', betRoutes);
+
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
