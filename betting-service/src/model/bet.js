@@ -8,7 +8,7 @@ const betSchema = new mongoose.Schema({
   potentialWin: { type: Number },           
   status: {                                 
     type: String,
-    enum: ['pending', 'won', 'lost', 'cancelled'],
+    enum: ['pending', 'win', 'lost', 'cancelled'],
     default: 'pending',
   },
   createdAt: { type: Date, default: Date.now }, 

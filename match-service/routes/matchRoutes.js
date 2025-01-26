@@ -2,9 +2,47 @@ const express = require('express');
 const axios = require('axios');
 const Match = require('../models/Match');
 const router = express.Router();
+const AMQPService = require('../AMQPService/AMQPService');
 
-// URL du team-service depuis .env
 const teamServiceUrl = process.env.TEAM_SERVICE_URL;
+
+
+
+const sendMatchStartedToQueue = async (match) => {
+  const amqpService = new AMQPService(
+    `amqp://${process.env.MESSAGE_BROKER_USER}:${process.env.MESSAGE_BROKER_PASSWORD}@${process.env.MESSAGE_BROKER}`
+  );
+
+  try {
+    await amqpService.connect();
+    await amqpService.sendToQueue("Match_started", JSON.stringify(match));
+    console.log("Message sent to queue: Match_started");
+  } catch (error) {
+    console.error("Error sending message to RabbitMQ:", error.message);
+  } finally {
+    setTimeout(async () => {
+      await amqpService.close(); 
+    }, 5000);
+  }
+};
+const sendMatchEndedToQueue = async (match) => {
+  const amqpService = new AMQPService(
+    `amqp://${process.env.MESSAGE_BROKER_USER}:${process.env.MESSAGE_BROKER_PASSWORD}@${process.env.MESSAGE_BROKER}`
+  );
+
+  try {
+    await amqpService.connect();
+    await amqpService.sendToQueue("Match_ended", JSON.stringify(match));
+    console.log("Message sent to queue: Match_ended");
+  } catch (error) {
+    console.error("Error sending message to RabbitMQ:", error.message);
+  } finally {
+    setTimeout(async () => {
+      await amqpService.close(); 
+    }, 5000);
+  }
+};
+
 
 router.post('/', async (req, res) => {
     try {
@@ -20,12 +58,13 @@ router.post('/', async (req, res) => {
   
       // Créez le match
       const match = new Match({
-        homeTeam,
-        awayTeam,
+        homeTeam : homeTeamResponse.data.name,
+        awayTeam : awayTeamResponse.data.name,
         date,
       });
   
       await match.save();
+      
       res.status(201).json({ message: 'Match ajouté avec succès.', match });
     } catch (error) {
       console.error('Erreur lors de l\'ajout du match :', error);
@@ -63,6 +102,16 @@ router.post('/start/:id', async (req, res) => {
     match.status = 'in_progress';
     await match.save();
 
+    // Envoyer un message à la queue "Match_started"
+    await sendMatchStartedToQueue({
+      matchId: match._id,
+      homeTeam: match.homeTeam,
+      awayTeam: match.awayTeam,
+      status: match.status,
+      date: match.date,
+    });
+    
+
     res.status(200).send({
       message: 'Match démarré avec succès. Les scores seront mis à jour après 10 secondes.',
       match: {
@@ -78,19 +127,28 @@ router.post('/start/:id', async (req, res) => {
       const awayScore = Math.floor(Math.random() * 6);
 
       // Mettre à jour le match avec les scores finaux
-      match.score.home = homeScore;
-      match.score.away = awayScore;
+      match.score = { home: homeScore, away: awayScore };
       match.status = 'completed';
       await match.save();
 
+      // Envoyer un message à la queue "Match_ended"
+      await sendMatchEndedToQueue({
+        matchId: match._id,
+        homeTeam: match.homeTeam,
+        awayTeam: match.awayTeam,
+        status: match.status,
+        score: match.score,
+        date: match.date,
+      });
+
       console.log(`Match terminé ! Résultat : ${match.homeTeam} ${homeScore} - ${awayScore} ${match.awayTeam}`);
     }, 10000); // Attendre 10 secondes (10 000 ms)
-
   } catch (err) {
     console.error('Erreur lors du démarrage du match :', err);
     res.status(500).send({ error: 'Erreur lors du démarrage du match.' });
   }
 });
+
 
 // Route pour récupérer un match par ID
 router.get('/:id', async (req, res) => {
@@ -99,7 +157,7 @@ router.get('/:id', async (req, res) => {
     if (!match) {
       return res.status(404).json({ error: 'Match introuvable.' });
     }
-    res.status(200).json(match);
+    res.status(200).json({ message: 'le match : ', match });
   } catch (err) {
     console.error('Erreur lors de la récupération du match :', err);
     res.status(500).json({ error: 'Erreur lors de la récupération du match.' });

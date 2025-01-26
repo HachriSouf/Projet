@@ -13,11 +13,7 @@ const customerService = axios.create({
     timeout: 5000,
     headers: { "Content-Type": "application/json" },
   });
-const matchService = axios.create({
-    baseURL: "http://trd_project-match-service-1:4002",
-    timeout: 5000,
-    headers: { "Content-Type": "application/json" },
-  });
+
   const sendBetCreatedMessageToQueue = async (bet) => {
     const amqpService = new AMQPService(
       `amqp://${process.env.MESSAGE_BROKER_USER}:${process.env.MESSAGE_BROKER_PASSWORD}@${process.env.MESSAGE_BROKER}`
@@ -36,27 +32,31 @@ const matchService = axios.create({
     }
   };
 
-  exports.createBet = async (req, res) => {
+  const matchService = axios.create({
+    baseURL: "http://trd_project-match-service-1:4007",
+    timeout: 5000,
+    headers: { "Content-Type": "application/json" },
+  });
+
+exports.createBet = async (req, res) => {
     try {
       const { matchId, oddId, betAmount } = req.body;
-  
+      console.log("LE ID DU MATCH ///////////// : ",matchId);
       // Vérifier le token JWT via Auth-Service
       const token = req.header('Authorization')?.split(' ')[1];
-      console.log("le token : ", token);
       if (!token) {
         return res.status(401).json({ message: 'No token provided' });
       }
       const authResponse = await authService.get("/auth/verify", {
         headers: { Authorization: `Bearer ${token}` },
       });
-      
-      console.log('authresponse : ',authResponse.data.user);
+  
+      console.log("authResponse:", authResponse.data.user);
       const username = authResponse.data.user.username;
   
+      // Vérifier le client via Customer-Service
       const customerResponse = await customerService.get(`/customer/${username}`);
-      console.log('customerResponse : ',customerResponse.data.customer);
       const customer = customerResponse.data.customer;
-  
       if (!customer) {
         return res.status(404).json({ message: 'Customer not found' });
       }
@@ -65,40 +65,47 @@ const matchService = axios.create({
         return res.status(400).json({ message: 'Insufficient balance' });
       }
   
-      const match = {
-        id: matchId,
-        teams: ["Barça", "Madrid"],
-        date: "2025-01-30T20:00:00Z",
-      };
+      // Récupérer les informations du match via Match-Service
+      console.log('le id avant de l entrer du match :',matchId);
+      const matchResponse = await matchService.get(`/matches/${matchId}`);
+      const match = matchResponse.data.match;
+      console.log('le match recus : ' ,match);
   
-      const oddValue = 2.0; 
+      if (!match) {
+        return res.status(404).json({ message: 'Match not found' });
+      }
+  
+      // Simuler une valeur de cote (à remplacer par Odd-Service si nécessaire)
+      const oddValue = 2.0;
       const potentialWin = betAmount * oddValue;
   
+      // Créer un nouveau pari
       const newBet = new Bet({
         userId: authResponse.data.user._id,
-        matchId: match.id,
+        matchId: matchId,
         oddId,
         betAmount,
         potentialWin,
       });
-
-      console.log('saving...');
-
+  
+      console.log("Saving bet...");
+  
       await newBet.save();
   
       await customerService.put(`/customer/${username}`, {
         balance: customer.balance - betAmount,
       });
-      console.log('sending message to queue....');
+  
+      console.log("Sending bet to queue...");
       const sentBet = { ...newBet.toObject(), email: authResponse.data.user.email };
       await sendBetCreatedMessageToQueue(sentBet);
-
-      console.log('message sent !');
-
-      res.status(201).json({ message: 'Bet created successfully', bet: newBet });
+  
+      console.log("Bet sent to queue!");
+  
+      res.status(201).json({ message: "Bet created successfully", bet: newBet });
     } catch (err) {
-      console.error('Error creating bet:', err);
-      res.status(500).json({ message: 'Server error' });
+      console.error("Error creating bet:", err);
+      res.status(500).json({ message: "Server error" });
     }
   };
 
