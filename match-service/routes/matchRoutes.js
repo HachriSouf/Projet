@@ -92,5 +92,19 @@ router.post('/start/:id', async (req, res) => {
   }
 });
 
+// Route pour récupérer un match par ID
+router.get('/:id', async (req, res) => {
+  try {
+    const match = await Match.findById(req.params.id);
+    if (!match) {
+      return res.status(404).json({ error: 'Match introuvable.' });
+    }
+    res.status(200).json(match);
+  } catch (err) {
+    console.error('Erreur lors de la récupération du match :', err);
+    res.status(500).json({ error: 'Erreur lors de la récupération du match.' });
+  }
+});
+
 
 module.exports = router;
