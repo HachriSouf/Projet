@@ -1,0 +1,5753 @@
+[
+  {
+    "Rank": 1,
+    "Club": "Man City",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 2061.38452148,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 2,
+    "Club": "Real Madrid",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1993.12133789,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 3,
+    "Club": "Inter",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1960.0324707,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 4,
+    "Club": "Arsenal",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1955.52624512,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 5,
+    "Club": "Leverkusen",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1924.13647461,
+    "From": "2024-09-15",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 6,
+    "Club": "Bayern",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1912.66345215,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 7,
+    "Club": "Barcelona",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1910.20129395,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 8,
+    "Club": "Liverpool",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1903.07299805,
+    "From": "2024-09-16",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 9,
+    "Club": "Paris SG",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1899.08361816,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 10,
+    "Club": "Dortmund",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1874.06311035,
+    "From": "2024-09-14",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 11,
+    "Club": "Atalanta",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1870.21716309,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 12,
+    "Club": "RB Leipzig",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1854.50073242,
+    "From": "2024-09-15",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 13,
+    "Club": "Atletico",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1843.07958984,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 14,
+    "Club": "Sporting",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1838.43493652,
+    "From": "2024-09-14",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 15,
+    "Club": "Juventus",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1829.38549805,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 16,
+    "Club": "Milan",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1821.7545166,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 17,
+    "Club": "Chelsea",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1821.02319336,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 18,
+    "Club": "Newcastle",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1814.83508301,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 19,
+    "Club": "Stuttgart",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1799.65710449,
+    "From": "2024-09-16",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 20,
+    "Club": "PSV",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1799.48242188,
+    "From": "2024-09-16",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 21,
+    "Club": "Roma",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1791.71704102,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 22,
+    "Club": "Porto",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1790.24084473,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 23,
+    "Club": "Girona",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1788.75061035,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 24,
+    "Club": "Tottenham",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1785.37719727,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 25,
+    "Club": "Napoli",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1782.39648438,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 26,
+    "Club": "Aston Villa",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1782.01721191,
+    "From": "2024-09-16",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 27,
+    "Club": "Lazio",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1778.38745117,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 28,
+    "Club": "Monaco",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1776.67724609,
+    "From": "2024-09-17",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 29,
+    "Club": "Man United",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1774.45739746,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 30,
+    "Club": "Bologna",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1763.86474609,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 31,
+    "Club": "Benfica",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1761.25585938,
+    "From": "2024-09-15",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 32,
+    "Club": "Villarreal",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1761.22607422,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 33,
+    "Club": "Bilbao",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1757.57543945,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 34,
+    "Club": "Lille",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1756.84716797,
+    "From": "2024-09-16",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 35,
+    "Club": "Marseille",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1754.55053711,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 36,
+    "Club": "Torino",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1749.26184082,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 37,
+    "Club": "Slavia Praha",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1741.93383789,
+    "From": "2024-09-16",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 38,
+    "Club": "Fiorentina",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1741.17541504,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 39,
+    "Club": "Feyenoord",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1740.76501465,
+    "From": "2024-09-15",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 40,
+    "Club": "Sociedad",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1739.30444336,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 41,
+    "Club": "Brighton",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1738.42260742,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 42,
+    "Club": "Crystal Palace",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1736.98608398,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 43,
+    "Club": "West Ham",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1730.70703125,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 44,
+    "Club": "Sparta Praha",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1727.75512695,
+    "From": "2024-09-01",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 45,
+    "Club": "Brentford",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1719.36523438,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 46,
+    "Club": "Lens",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1714.89868164,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 47,
+    "Club": "Betis",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1714.64855957,
+    "From": "2024-09-14",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 48,
+    "Club": "Fulham",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1712.74865723,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 49,
+    "Club": "Brugge",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1712.46569824,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 50,
+    "Club": "Frankfurt",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1711.2487793,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 51,
+    "Club": "Fenerbahce",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1708.4128418,
+    "From": "2024-09-16",
+    "To": "2024-09-26"
+  },
+  {
+    "Rank": 52,
+    "Club": "Galatasaray",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1701.88317871,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 53,
+    "Club": "Lyon",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1697.24963379,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 54,
+    "Club": "Bournemouth",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1696.28405762,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 55,
+    "Club": "Rennes",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1693.58959961,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 56,
+    "Club": "Freiburg",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1692.97277832,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 57,
+    "Club": "Genoa",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1692.15869141,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 58,
+    "Club": "Nice",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1687.32531738,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 59,
+    "Club": "Udinese",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1687.29077148,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 60,
+    "Club": "Mainz",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1685.70812988,
+    "From": "2024-09-17",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 61,
+    "Club": "Werder",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1682.37768555,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 62,
+    "Club": "Brest",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1680.9029541,
+    "From": "2024-09-17",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": 63,
+    "Club": "Salzburg",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1673.96435547,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 64,
+    "Club": "Hoffenheim",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1672.75305176,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 65,
+    "Club": "Heidenheim",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1669.9909668,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 66,
+    "Club": "Forest",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1669.68200684,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 67,
+    "Club": "Everton",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1668.77331543,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 68,
+    "Club": "Sevilla",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1666.32275391,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 69,
+    "Club": "Zenit",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1665.79846191,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": 70,
+    "Club": "Olympiakos",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1665.10327148,
+    "From": "2024-09-16",
+    "To": "2024-09-26"
+  },
+  {
+    "Rank": 71,
+    "Club": "Celta",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1664.91931152,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 72,
+    "Club": "Monza",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1663.02148438,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 73,
+    "Club": "Wolves",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1659.29846191,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 74,
+    "Club": "Verona",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1656.8326416,
+    "From": "2024-09-17",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 75,
+    "Club": "Empoli",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1655.79431152,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 76,
+    "Club": "Celtic",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1655.55981445,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 77,
+    "Club": "Union Berlin",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1655.5369873,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 78,
+    "Club": "Gladbach",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1653.14624023,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 79,
+    "Club": "Alaves",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1652.44567871,
+    "From": "2024-09-17",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 80,
+    "Club": "Wolfsburg",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1651.68676758,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 81,
+    "Club": "St Gillis",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1645.73461914,
+    "From": "2024-09-17",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 82,
+    "Club": "Reims",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1645.64868164,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 83,
+    "Club": "Anderlecht",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1644.79504395,
+    "From": "2024-09-17",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 84,
+    "Club": "Osasuna",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1643.95349121,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 85,
+    "Club": "Mallorca",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1643.48522949,
+    "From": "2024-09-16",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 86,
+    "Club": "Valencia",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1643.06896973,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 87,
+    "Club": "Braga",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1641.72668457,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 88,
+    "Club": "Toulouse",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1641.48852539,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 89,
+    "Club": "Leicester",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1639.78405762,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 90,
+    "Club": "Rayo Vallecano",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1628.00012207,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 91,
+    "Club": "Getafe",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1626.43005371,
+    "From": "2024-09-17",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": 92,
+    "Club": "Augsburg",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1623.85180664,
+    "From": "2024-09-17",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": 93,
+    "Club": "Burnley",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1623.84301758,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 94,
+    "Club": "PAOK",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1622.59667969,
+    "From": "2024-09-17",
+    "To": "2024-09-25"
+  },
+  {
+    "Rank": 95,
+    "Club": "Duesseldorf",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1622.3326416,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 96,
+    "Club": "Gent",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1621.84912109,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": 97,
+    "Club": "FC Kobenhavn",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1618.80664062,
+    "From": "2024-09-17",
+    "To": "2024-09-23"
+  },
+  {
+    "Rank": 98,
+    "Club": "Lecce",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1618.17028809,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": 99,
+    "Club": "Viktoria Plzen",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1616.49633789,
+    "From": "2024-09-16",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": 100,
+    "Club": "Strasbourg",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1613.68164062,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Montpellier",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1612.94299316,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Guimaraes",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1611.32666016,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ajax",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1611.02697754,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Espanyol",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1610.81396484,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Midtjylland",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1610.49316406,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sturm Graz",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1606.32446289,
+    "From": "2024-09-01",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bodoe Glimt",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1605.63012695,
+    "From": "2024-09-14",
+    "To": "2024-09-25"
+  },
+  {
+    "Rank": "None",
+    "Club": "Alkmaar",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1604.73193359,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Leeds",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1604.30541992,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Twente",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1599.29870605,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": "None",
+    "Club": "Koeln",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1595.12780762,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "M Tel Aviv",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1592.37158203,
+    "From": "2024-09-15",
+    "To": "2024-09-26"
+  },
+  {
+    "Rank": "None",
+    "Club": "AEK",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1592.33886719,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cagliari",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1591.56970215,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "FC Krasnodar",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1589.66516113,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Valladolid",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1586.24291992,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rangers",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1586.03320312,
+    "From": "2024-09-16",
+    "To": "2024-09-26"
+  },
+  {
+    "Rank": "None",
+    "Club": "Antwerp",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1585.17675781,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hamburg",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1581.51867676,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Eibar",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1581.4765625,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bochum",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1580.57043457,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Genk",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1578.86108398,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sassuolo",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1578.04382324,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Shakhtar",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1577.45922852,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Las Palmas",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1577.40380859,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Levante",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1576.19909668,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Southampton",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1575.765625,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Parma",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1575.5994873,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Karabakh Agdam",
+    "Country": "AZE",
+    "Level": 0,
+    "Elo": 1575.08300781,
+    "From": "2024-08-30",
+    "To": "2024-09-26"
+  },
+  {
+    "Rank": "None",
+    "Club": "St Pauli",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1574.41210938,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ipswich",
+    "Country": "ENG",
+    "Level": 1,
+    "Elo": 1573.16564941,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Panathinaikos",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1570.515625,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dinamo Zagreb",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1569.50292969,
+    "From": "2024-09-14",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": "None",
+    "Club": "Crvena Zvezda",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1568.70141602,
+    "From": "2024-09-15",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lok Moskva",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1568.13574219,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Nordsjaelland",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1567.90991211,
+    "From": "2024-09-17",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cadiz",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1567.79724121,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Leganes",
+    "Country": "ESP",
+    "Level": 1,
+    "Elo": 1567.33410645,
+    "From": "2024-09-14",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Nantes",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1564.79064941,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Karlsruhe",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1564.78613281,
+    "From": "2024-09-14",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Maccabi Haifa",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1562.46484375,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Frosinone",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1560.60400391,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lorient",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1559.63256836,
+    "From": "2024-09-14",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "West Brom",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1557.09277344,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Holstein",
+    "Country": "GER",
+    "Level": 1,
+    "Elo": 1555.62963867,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Venezia",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1555.34753418,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dynamo Kyiv",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1554.67529297,
+    "From": "2024-09-15",
+    "To": "2024-09-25"
+  },
+  {
+    "Rank": "None",
+    "Club": "CSKA Moskva",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1553.15441895,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Le Havre",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1553.14868164,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Young Boys",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1552.8840332,
+    "From": "2024-09-01",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": "None",
+    "Club": "Brondby",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1550.63244629,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Spartak Moskva",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1550.04553223,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Oviedo",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1547.36938477,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Santander",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1546.6060791,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cremonese",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1545.89758301,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Metz",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1544.5760498,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Como",
+    "Country": "ITA",
+    "Level": 1,
+    "Elo": 1543.01867676,
+    "From": "2024-09-15",
+    "To": "2024-09-23"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sheffield United",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1542.6184082,
+    "From": "2024-09-14",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Auxerre",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1541.5456543,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Malmoe",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1539.75048828,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dynamo Moskva",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1538.9798584,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bueyueksehir",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1537.68859863,
+    "From": "2024-09-02",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Utrecht",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1533.5123291,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Almeria",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1533.46765137,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Luton",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1533.19250488,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Molde",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1532.20410156,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Aarhus",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1529.05297852,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Middlesbrough",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1528.55554199,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Paderborn",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1523.63439941,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cercle Brugge",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1522.84960938,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zaragoza",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1521.95959473,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hertha",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1520.29675293,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Besiktas",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1520.10205078,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Granada",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1519.73449707,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hannover",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1518.43066406,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Famalicao",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1517.80163574,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Elfsborg",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1517.18786621,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Clermont",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1516.05065918,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Mechelen",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1513.34936523,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Huesca",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1510.37060547,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Salernitana",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1508.6763916,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Nijmegen",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1506.79174805,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Razgrad",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1505.45605469,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Saint-Etienne",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1504.13769531,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Gijon",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1502.97314453,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rapid Wien",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1502.53210449,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Norwich",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1498.4140625,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Moreirense",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1496.28881836,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sparta Rotterdam",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1495.61743164,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Burgos",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1495.48254395,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Fuerth",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1493.52185059,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Spezia",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1492.9621582,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lech",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1492.84338379,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Trabzonspor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1492.72509766,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Paris FC",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1492.20043945,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Leuven",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1491.32092285,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Charleroi",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1491.2512207,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Legia",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1489.84741211,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Arouca",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1488.60253906,
+    "From": "2024-09-14",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Coventry",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1485.38061523,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Watford",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1483.89733887,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "StGallen",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1483.2623291,
+    "From": "2024-09-02",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rostov",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1482.99987793,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Schalke",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1482.60839844,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Albacete",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1482.08532715,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rio Ave",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1480.76245117,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Swansea",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1480.4864502,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Blackburn",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1480.48266602,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Elche",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1480.43029785,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sampdoria",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1478.25805664,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Mirandes",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1478.03186035,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ferencvaros",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1476.7076416,
+    "From": "2024-09-02",
+    "To": "2024-09-25"
+  },
+  {
+    "Rank": "None",
+    "Club": "Servette",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1476.48266602,
+    "From": "2024-09-02",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Tenerife",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1474.53881836,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sunderland",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1474.08837891,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hull",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1473.72766113,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Pisa",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1473.66064453,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zuerich",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1472.33178711,
+    "From": "2024-09-02",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Banik Ostrava",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1471.83496094,
+    "From": "2024-09-02",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Palermo",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1471.32714844,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lugano",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1470.77502441,
+    "From": "2024-09-02",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rakow",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1468.4654541,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Angers",
+    "Country": "FRA",
+    "Level": 1,
+    "Elo": 1467.24316406,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Westerlo",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1466.60510254,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Catanzaro",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1464.40209961,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Brescia",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1463.60913086,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Magdeburg",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1463.16955566,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Mlada Boleslav",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1463.11853027,
+    "From": "2024-09-02",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": "None",
+    "Club": "Suedtirol",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1461.90478516,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Gil Vicente",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1461.59692383,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Omonia",
+    "Country": "CYP",
+    "Level": 0,
+    "Elo": 1459.69116211,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "St Truiden",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1459.2598877,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Silkeborg",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1458.99267578,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cosenza",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1458.88903809,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hammarby",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1458.73376465,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Darmstadt",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1456.9744873,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Djurgarden",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1456.39892578,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Viking",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1455.5736084,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cartagena",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1454.80639648,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Brann",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1454.77661133,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Millwall",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1454.77429199,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Basel",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1454.4810791,
+    "From": "2024-09-01",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hajduk",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1452.6784668,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "QPR",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1452.57531738,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Standard",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1451.76672363,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Pogon",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1451.4263916,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bristol City",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1451.4140625,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Stoke",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1450.04284668,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Slovacko",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1449.75854492,
+    "From": "2024-09-01",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "LASK",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1449.5213623,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Castellon",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1449.26586914,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Austria Wien",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1448.62976074,
+    "From": "2024-09-02",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Paphos",
+    "Country": "CYP",
+    "Level": 0,
+    "Elo": 1448.09814453,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Aris",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1447.56201172,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Slovan Bratislava",
+    "Country": "SLK",
+    "Level": 0,
+    "Elo": 1445.83728027,
+    "From": "2024-08-30",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ferrol",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1444.03503418,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Eldense",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1443.43884277,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Go Ahead Eagles",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1442.84802246,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Guingamp",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1441.48144531,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Malaga",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1441.20080566,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bari",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1439.31445312,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Randers",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1437.86499023,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Casa Pia",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1437.57092285,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bastia",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1437.27246094,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lautern",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1436.97387695,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Juve Stabia",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1434.68859863,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "CFR Cluj",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1434.34692383,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Larnaca",
+    "Country": "CYP",
+    "Level": 0,
+    "Elo": 1433.34973145,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sivasspor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1432.76867676,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cittadella",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1431.97290039,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Viborg",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1430.5949707,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Modena",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1428.0793457,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kryliya Sovetov",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1427.79248047,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cesena",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1427.34484863,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Preston",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1427.05651855,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hradec Kralove",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1426.58630371,
+    "From": "2024-09-01",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sheffield Weds",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1426.4420166,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Steaua",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1426.20019531,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Wolfsberg",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1424.80603027,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Alanyaspor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1424.73059082,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Piast Gliwice",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1424.42407227,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rijeka",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1424.07751465,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Santa Clara",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1423.60327148,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Pau",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1423.59069824,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Olimpija Ljubljana",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1422.25952148,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Beer-Sheva",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1421.9855957,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Haecken",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1421.46960449,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Mantova",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1421.45922852,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Konyaspor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1421.17810059,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kasimpasa",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1420.96838379,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Elversberg",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1420.89599609,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Jablonec",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1418.29003906,
+    "From": "2024-09-01",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Caen",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1417.94274902,
+    "From": "2024-09-17",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cordoba",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1416.8605957,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Jagiellonia",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1416.81652832,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Amiens",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1416.64245605,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Terek Grozny",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1416.38000488,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Annecy",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1415.01025391,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Reggiana",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1414.97668457,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rosenborg",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1414.16467285,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rodez",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1413.49523926,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sigma Olomouc",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1412.94189453,
+    "From": "2024-09-02",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": "None",
+    "Club": "Heerenveen",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1412.90332031,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": "None",
+    "Club": "Orenburg",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1412.66784668,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Nuernberg",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1412.57641602,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Depor",
+    "Country": "ESP",
+    "Level": 2,
+    "Elo": 1412.06774902,
+    "From": "2024-09-14",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Luzern",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1411.33422852,
+    "From": "2024-09-02",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Boavista",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1411.04394531,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Slask",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1410.88977051,
+    "From": "2024-09-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "APOEL",
+    "Country": "CYP",
+    "Level": 0,
+    "Elo": 1410.59008789,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Slovan Liberec",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1410.32983398,
+    "From": "2024-09-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Oxford",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1407.32409668,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Derby",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1405.18664551,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cracovia",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1405.13964844,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Carrarese",
+    "Country": "ITA",
+    "Level": 2,
+    "Elo": 1404.88464355,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Plymouth",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1404.27624512,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rubin Kazan",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1403.11157227,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Estoril",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1402.07849121,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sochi",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1399.95446777,
+    "From": "2024-05-26",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Puskas Akademia",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1398.51757812,
+    "From": "2024-09-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Farense",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1397.12475586,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hartberg",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1397.08276367,
+    "From": "2024-09-01",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Mjaellby",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1396.47814941,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Grenoble",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1396.12878418,
+    "From": "2024-09-17",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zwolle",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1395.77832031,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Levski",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1395.2689209,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Craiova",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1395.25476074,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Klagenfurt",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1394.90063477,
+    "From": "2024-09-01",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Antalyaspor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1394.86804199,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "AIK",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1394.67834473,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sittard",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1394.15344238,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Tromso",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1393.51708984,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sverdlovsk",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1391.29382324,
+    "From": "2024-05-26",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "IK Sirius",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1390.31311035,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Nacional",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1388.70007324,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Adana Demirspor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1388.39355469,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Troyes",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1388.38220215,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ajaccio",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1388.0045166,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "AVS Futebol",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1387.93994141,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Trnava",
+    "Country": "SLK",
+    "Level": 0,
+    "Elo": 1387.64477539,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Gornik",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1384.74060059,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Estrela Amadora",
+    "Country": "POR",
+    "Level": 1,
+    "Elo": 1384.44372559,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Maribor",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1384.27856445,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ruzomberok",
+    "Country": "SLK",
+    "Level": 0,
+    "Elo": 1381.64648438,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dender",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1379.92321777,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Portsmouth",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1378.01342773,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Fakel Voronezh",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1377.58691406,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cardiff",
+    "Country": "ENG",
+    "Level": 2,
+    "Elo": 1377.47839355,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sheriff Tiraspol",
+    "Country": "MOL",
+    "Level": 0,
+    "Elo": 1377.32055664,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Muenster",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1377.03601074,
+    "From": "2024-09-14",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Braunschweig",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1376.59570312,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bohemians Praha",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1375.40917969,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hearts",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1374.88208008,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Aberdeen",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1373.80554199,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Baltika",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1373.00744629,
+    "From": "2024-05-26",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ulm",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1371.88513184,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Regensburg",
+    "Country": "GER",
+    "Level": 2,
+    "Elo": 1370.0847168,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cherno More",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1368.4017334,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "FK Astana",
+    "Country": "KAZ",
+    "Level": 0,
+    "Elo": 1368.34375,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Laval",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1368.07958984,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Red Star",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1366.3449707,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Osijek",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1365.23254395,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Universitatea Cluj",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1365.01831055,
+    "From": "2024-09-17",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Pardubice",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1364.70605469,
+    "From": "2024-09-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hapoel Haifa",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1364.68103027,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Eyupspor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1363.2388916,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Samsunspor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1362.25817871,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dunkerque",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1362.25732422,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Widzew",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1360.49121094,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kayseri",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1359.90844727,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Groningen",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1359.87243652,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kortrijk",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1359.45898438,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rukh Lviv",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1359.44519043,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rizespor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1357.22290039,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Almere",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1355.3001709,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Goeztepe",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1354.88317871,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sarpsborg",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1354.49475098,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lubin",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1353.89221191,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Willem II",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1353.7520752,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Martigues",
+    "Country": "FRA",
+    "Level": 2,
+    "Elo": 1353.3795166,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lyngby",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1351.79040527,
+    "From": "2024-09-14",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "BW Linz",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1351.12011719,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Gaziantep FK",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1350.03320312,
+    "From": "2024-09-15",
+    "To": "2024-09-17"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lausanne",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1348.57739258,
+    "From": "2024-09-01",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Fredrikstad",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1346.3795166,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Polissya Zhytomyr",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1345.34533691,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Celje",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1344.96679688,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Waalwijk",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1344.94909668,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Altach",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1343.85046387,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Teplice",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1343.57556152,
+    "From": "2024-09-02",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Stromsgodset",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1342.81323242,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Aalborg",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1342.52087402,
+    "From": "2024-09-14",
+    "To": "2024-09-23"
+  },
+  {
+    "Rank": "None",
+    "Club": "Korona",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1341.86535645,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zorya",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1341.67932129,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sion",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1341.11657715,
+    "From": "2024-09-01",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Heracles",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1340.16088867,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Paksi",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1339.1472168,
+    "From": "2024-09-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Puszcza Niepolomice",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1338.0880127,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Grasshoppers",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1336.86376953,
+    "From": "2024-09-01",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Winterthur",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1336.31970215,
+    "From": "2024-09-02",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bnei Sakhinin",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1336.02758789,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Yverdon Sport",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1335.20739746,
+    "From": "2024-09-01",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "SonderjyskE",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1334.80175781,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zira",
+    "Country": "AZE",
+    "Level": 0,
+    "Elo": 1334.62109375,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Rapid Bucuresti",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1334.55895996,
+    "From": "2024-09-17",
+    "To": "2024-09-23"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ham-Kam",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1334.38525391,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "KFUM Oslo",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1333.83813477,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Olexandriya",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1331.77612305,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Partizan",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1330.62060547,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lok Zagreb",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1330.06347656,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sepsi",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1328.48791504,
+    "From": "2024-09-14",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dunajska",
+    "Country": "SLK",
+    "Level": 0,
+    "Elo": 1326.92504883,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Goeteborg",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1326.77856445,
+    "From": "2024-09-16",
+    "To": "2024-09-23"
+  },
+  {
+    "Rank": "None",
+    "Club": "Viitorul",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1326.72253418,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lillestrom",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1325.67602539,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Nizhny Novgorod",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1324.92443848,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bodrum",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1324.32531738,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "OFI",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1323.99047852,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sabah",
+    "Country": "AZE",
+    "Level": 0,
+    "Elo": 1323.80029297,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Vejle",
+    "Country": "DEN",
+    "Level": 1,
+    "Elo": 1322.39770508,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Haugesund",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1321.57641602,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sandefjord",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1321.49316406,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Beerschot AC",
+    "Country": "BEL",
+    "Level": 1,
+    "Elo": 1321.38110352,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "CSKA Sofia",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1321.20654297,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Breda",
+    "Country": "NED",
+    "Level": 1,
+    "Elo": 1321.19799805,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kilmarnock",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1320.07568359,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kristiansund",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1319.68933105,
+    "From": "2024-09-16",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kryvbas",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1319.43920898,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Stal Mielec",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1319.22485352,
+    "From": "2024-08-31",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Videoton",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1316.3782959,
+    "From": "2024-08-31",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Odd Grenland",
+    "Country": "NOR",
+    "Level": 1,
+    "Elo": 1315.98425293,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Norrkoeping",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1313.35437012,
+    "From": "2024-09-17",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hatayspor",
+    "Country": "TUR",
+    "Level": 1,
+    "Elo": 1311.78808594,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sumqayit",
+    "Country": "AZE",
+    "Level": 0,
+    "Elo": 1311.06750488,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hibernian",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1310.40734863,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "FC Khimki",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1309.97375488,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Karvina",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1309.88305664,
+    "From": "2024-09-02",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hermannstadt",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1309.39428711,
+    "From": "2024-09-17",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Motherwell",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1308.36975098,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Thun",
+    "Country": "SUI",
+    "Level": 1,
+    "Elo": 1308.09362793,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "St Mirren",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1306.63098145,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kalmar",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1304.17810059,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Varnamo",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1303.13256836,
+    "From": "2024-09-16",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Maccabi Bnei Raina",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1301.94958496,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Tula",
+    "Country": "RUS",
+    "Level": 1,
+    "Elo": 1300.44445801,
+    "From": "2024-06-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Radomiak",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1299.5,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "GAK",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1298.89172363,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Debrecen",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1298.64648438,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Motor Lublin",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1298.43310547,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ashdod",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1298.03820801,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Vaduz",
+    "Country": "LIE",
+    "Level": 0,
+    "Elo": 1297.90844727,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Otelul Galati",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1297.72277832,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Atromitos",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1296.90197754,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Katowice",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1296.84997559,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Pyunik",
+    "Country": "ARM",
+    "Level": 0,
+    "Elo": 1296.70007324,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Beitar",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1296.25073242,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Brommapojkarna",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1295.13781738,
+    "From": "2024-09-16",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hapoel Jerusalem",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1291.97937012,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Varazdin",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1291.89526367,
+    "From": "2024-09-16",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Panetolikos",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1288.53820801,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dukla",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1288.16369629,
+    "From": "2024-09-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Wattens",
+    "Country": "AUT",
+    "Level": 1,
+    "Elo": 1287.62451172,
+    "From": "2024-09-01",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zrinjski Mostar",
+    "Country": "BHZ",
+    "Level": 0,
+    "Elo": 1287.01538086,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "NFC Volos",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1285.1159668,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lamia",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1283.86633301,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Wisla",
+    "Country": "POL",
+    "Level": 0,
+    "Elo": 1283.41772461,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "LNZ",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1282.9630127,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Backa Topola",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1282.49902344,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lechia",
+    "Country": "POL",
+    "Level": 1,
+    "Elo": 1281.17651367,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Istra 1961",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1280.93518066,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Vorskla",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1279.86682129,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kuopio",
+    "Country": "FIN",
+    "Level": 0,
+    "Elo": 1278.54418945,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "UTA Arad",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1278.45275879,
+    "From": "2024-09-17",
+    "To": "2024-09-23"
+  },
+  {
+    "Rank": "None",
+    "Club": "CSKA 1948 Sofia",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1277.7598877,
+    "From": "2024-09-16",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "FK Riga",
+    "Country": "LAT",
+    "Level": 0,
+    "Elo": 1277.51306152,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Asteras Tripolis",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1276.26257324,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "GAIS",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1275.91748047,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Netanya",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1274.83312988,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kecskemeti",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1273.28308105,
+    "From": "2024-09-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Noah",
+    "Country": "ARM",
+    "Level": 0,
+    "Elo": 1273.07470703,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zalaegerszegi",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1272.60864258,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ceske Budejovice",
+    "Country": "CZE",
+    "Level": 1,
+    "Elo": 1270.23937988,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dundee",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1263.18798828,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kalithea",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1262.57836914,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Diosgyori",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1260.16943359,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cukaricki",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1259.17785645,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lok Plovdiv",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1255.67602539,
+    "From": "2024-09-14",
+    "To": "2024-09-19"
+  },
+  {
+    "Rank": "None",
+    "Club": "Novi Sad",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1254.23217773,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ujpest",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1253.32824707,
+    "From": "2024-09-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Petrolul Ploiesti",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1252.84448242,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bravo",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1252.390625,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "MTK",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1251.83312988,
+    "From": "2024-08-31",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "HNK Gorica",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1251.75866699,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Koper",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1251.7154541,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dinamo Bucuresti",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1250.33740234,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Levadeiakos",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1249.81591797,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Panserraikos",
+    "Country": "GRE",
+    "Level": 1,
+    "Elo": 1249.8067627,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "M Petach Tikva",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1247.00134277,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Halmstad",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1245.73522949,
+    "From": "2024-09-16",
+    "To": "2024-09-23"
+  },
+  {
+    "Rank": "None",
+    "Club": "RFS",
+    "Country": "LAT",
+    "Level": 0,
+    "Elo": 1243.41064453,
+    "From": "2024-08-30",
+    "To": "2024-09-26"
+  },
+  {
+    "Rank": "None",
+    "Club": "HJK Helsinki",
+    "Country": "FIN",
+    "Level": 0,
+    "Elo": 1242.71984863,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Aktobe",
+    "Country": "KAZ",
+    "Level": 0,
+    "Elo": 1242.65649414,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dinamo Minsk",
+    "Country": "BLR",
+    "Level": 0,
+    "Elo": 1241.52148438,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Voluntari",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1241.15466309,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Arda",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1240.86425781,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "St Patricks",
+    "Country": "IRL",
+    "Level": 0,
+    "Elo": 1240.28759766,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hapoel Eran Hadera",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1240.23901367,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kiryat Shmona",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1239.97900391,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Mura",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1235.97143555,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Botev Plovdiv",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1234.73657227,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ironi Tiberias",
+    "Country": "ISR",
+    "Level": 1,
+    "Elo": 1233.93640137,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Tobol",
+    "Country": "KAZ",
+    "Level": 0,
+    "Elo": 1233.5579834,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ararat",
+    "Country": "ARM",
+    "Level": 0,
+    "Elo": 1232.82678223,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dundee United",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1230.52368164,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Shamrock",
+    "Country": "IRL",
+    "Level": 0,
+    "Elo": 1228.984375,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Iasi",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1224.20617676,
+    "From": "2024-09-16",
+    "To": "2024-09-23"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kolos",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1223.83776855,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Drita",
+    "Country": "KOS",
+    "Level": 0,
+    "Elo": 1221.44030762,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Chernomorets",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1219.51013184,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "FK Sarajevo",
+    "Country": "BHZ",
+    "Level": 0,
+    "Elo": 1219.3026123,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ross County",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1216.62304688,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Vikingur",
+    "Country": "ISL",
+    "Level": 0,
+    "Elo": 1215.60021973,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Craiova 1948",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1215.38842773,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Botosani",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1215.00671387,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "St Johnstone",
+    "Country": "SCO",
+    "Level": 1,
+    "Elo": 1214.99438477,
+    "From": "2024-09-15",
+    "To": "2024-09-21"
+  },
+  {
+    "Rank": "None",
+    "Club": "Shelbourne",
+    "Country": "IRL",
+    "Level": 0,
+    "Elo": 1213.98864746,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Vaesteras",
+    "Country": "SWE",
+    "Level": 1,
+    "Elo": 1211.43395996,
+    "From": "2024-09-15",
+    "To": "2024-09-22"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ilves Tampere",
+    "Country": "FIN",
+    "Level": 0,
+    "Elo": 1209.87768555,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Banants",
+    "Country": "ARM",
+    "Level": 0,
+    "Elo": 1209.2010498,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ordabasy",
+    "Country": "KAZ",
+    "Level": 0,
+    "Elo": 1208.31958008,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zalgiris Vilnius",
+    "Country": "LIT",
+    "Level": 0,
+    "Elo": 1206.50427246,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Veres",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1205.97692871,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Obolon Kyiv",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1204.06591797,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Derry City",
+    "Country": "IRL",
+    "Level": 0,
+    "Elo": 1201.98181152,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Borac Banja Luka",
+    "Country": "BHZ",
+    "Level": 0,
+    "Elo": 1200.3013916,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Slaven Belupo",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1199.11535645,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Petrocub",
+    "Country": "MOL",
+    "Level": 0,
+    "Elo": 1198.23059082,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Nyiregyhaza",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1198.17663574,
+    "From": "2024-09-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Auda",
+    "Country": "LAT",
+    "Level": 0,
+    "Elo": 1196.49633789,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sibenik",
+    "Country": "CRO",
+    "Level": 1,
+    "Elo": 1194.45703125,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Livyi Bereh",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1193.74389648,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Karpaty",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1192.07226562,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Vaasa",
+    "Country": "FIN",
+    "Level": 0,
+    "Elo": 1190.4083252,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Slavia Sofia",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1189.47167969,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kragujevac",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1189.42504883,
+    "From": "2024-09-15",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ballkani",
+    "Country": "KOS",
+    "Level": 0,
+    "Elo": 1185.39013672,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Breidablik",
+    "Country": "ISL",
+    "Level": 0,
+    "Elo": 1185.19641113,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Unirea Slobozia",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1185.09411621,
+    "From": "2024-09-14",
+    "To": "2024-09-23"
+  },
+  {
+    "Rank": "None",
+    "Club": "Velez Mostar",
+    "Country": "BHZ",
+    "Level": 0,
+    "Elo": 1184.85339355,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Gyoer",
+    "Country": "HUN",
+    "Level": 1,
+    "Elo": 1182.88208008,
+    "From": "2024-09-01",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Shkendija",
+    "Country": "MAC",
+    "Level": 0,
+    "Elo": 1182.44299316,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Levski Krumovgrad",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1181.33972168,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Saburtalo",
+    "Country": "GEO",
+    "Level": 0,
+    "Elo": 1180.82006836,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Corvinul Hunedoara",
+    "Country": "ROM",
+    "Level": 0,
+    "Elo": 1180.09436035,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Valur",
+    "Country": "ISL",
+    "Level": 0,
+    "Elo": 1179.69848633,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Liepajas",
+    "Country": "LAT",
+    "Level": 0,
+    "Elo": 1173.6607666,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Inhulets",
+    "Country": "UKR",
+    "Level": 1,
+    "Elo": 1172.52807617,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Radomlje",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1170.58007812,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Milsami Orhei",
+    "Country": "MOL",
+    "Level": 0,
+    "Elo": 1170.2635498,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Torpedo Kutaisi",
+    "Country": "GEO",
+    "Level": 0,
+    "Elo": 1166.88305664,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Domzale",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1162.60009766,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Mladost Lucani",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1162.16149902,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Klaksvik",
+    "Country": "FAR",
+    "Level": 0,
+    "Elo": 1160.50170898,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Partizani Tirana",
+    "Country": "ALB",
+    "Level": 0,
+    "Elo": 1157.3190918,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zimbru",
+    "Country": "MOL",
+    "Level": 0,
+    "Elo": 1156.41064453,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Gloria Buzau",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1155.3963623,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Mioveni",
+    "Country": "ROM",
+    "Level": 1,
+    "Elo": 1153.60180664,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Stjarnan",
+    "Country": "ISL",
+    "Level": 0,
+    "Elo": 1149.12792969,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Batumi",
+    "Country": "GEO",
+    "Level": 0,
+    "Elo": 1147.73242188,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Flora Tallinn",
+    "Country": "EST",
+    "Level": 0,
+    "Elo": 1142.53259277,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Spartak Varna",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1140.5222168,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Egnatia",
+    "Country": "ALB",
+    "Level": 0,
+    "Elo": 1135.96179199,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Primorje",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1131.73583984,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Panevezys",
+    "Country": "LIT",
+    "Level": 0,
+    "Elo": 1127.95983887,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Neman Grodno",
+    "Country": "BLR",
+    "Level": 0,
+    "Elo": 1126.6940918,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "The New Saints",
+    "Country": "WAL",
+    "Level": 0,
+    "Elo": 1125.82165527,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lok Sofia",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1124.88305664,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "TransINVEST",
+    "Country": "LIT",
+    "Level": 0,
+    "Elo": 1124.68078613,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Novi Pazar",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1120.23620605,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Beroe Stara Zagora",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1119.03295898,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Isloch",
+    "Country": "BLR",
+    "Level": 0,
+    "Elo": 1118.73779297,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Vllaznia",
+    "Country": "ALB",
+    "Level": 0,
+    "Elo": 1118.453125,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zlatibor",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1116.01928711,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Tirana",
+    "Country": "ALB",
+    "Level": 0,
+    "Elo": 1115.26647949,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dinamo Tbilisi",
+    "Country": "GEO",
+    "Level": 0,
+    "Elo": 1111.65979004,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Mornar",
+    "Country": "MNT",
+    "Level": 0,
+    "Elo": 1108.85876465,
+    "From": "2024-08-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Siauliai",
+    "Country": "LIT",
+    "Level": 0,
+    "Elo": 1105.89465332,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Decic",
+    "Country": "MAC",
+    "Level": 0,
+    "Elo": 1104.81652832,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Nafta",
+    "Country": "SVN",
+    "Level": 1,
+    "Elo": 1102.92224121,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Nis",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1102.80737305,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Linfield",
+    "Country": "NIR",
+    "Level": 0,
+    "Elo": 1101.86877441,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Zeleznicar Pancevo",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1100.05541992,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hamrun",
+    "Country": "MLT",
+    "Level": 0,
+    "Elo": 1098.69104004,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Struga",
+    "Country": "MAC",
+    "Level": 0,
+    "Elo": 1091.16296387,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Tikves",
+    "Country": "MAC",
+    "Level": 0,
+    "Elo": 1090.02709961,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Torpedo Zhodino",
+    "Country": "BLR",
+    "Level": 0,
+    "Elo": 1086.06188965,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Niedercorn",
+    "Country": "LUX",
+    "Level": 0,
+    "Elo": 1085.1081543,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Vozdovac Beograd",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1084.83410645,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "IMT",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1084.56713867,
+    "From": "2024-09-14",
+    "To": "2024-09-18"
+  },
+  {
+    "Rank": "None",
+    "Club": "OFK",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1084.09594727,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Hebar",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1082.56921387,
+    "From": "2024-09-14",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Botev Vratsa",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1081.8059082,
+    "From": "2024-09-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Dudelange",
+    "Country": "LUX",
+    "Level": 0,
+    "Elo": 1081.29333496,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Llapi",
+    "Country": "KOS",
+    "Level": 0,
+    "Elo": 1076.71936035,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Krusevac",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1075.29492188,
+    "From": "2024-09-15",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Paide Linnameeskond",
+    "Country": "EST",
+    "Level": 0,
+    "Elo": 1074.55932617,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Crusaders",
+    "Country": "NIR",
+    "Level": 0,
+    "Elo": 1073.66223145,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "B 36 Torshavn",
+    "Country": "FAR",
+    "Level": 0,
+    "Elo": 1067.51220703,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Una Strassen",
+    "Country": "LUX",
+    "Level": 0,
+    "Elo": 1066.47937012,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Differdang",
+    "Country": "LUX",
+    "Level": 0,
+    "Elo": 1065.93029785,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Malisheva",
+    "Country": "KOS",
+    "Level": 0,
+    "Elo": 1062.00109863,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Gota",
+    "Country": "FAR",
+    "Level": 0,
+    "Elo": 1061.46972656,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Ivanjica",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1055.62402344,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Floriana",
+    "Country": "MLT",
+    "Level": 0,
+    "Elo": 1053.78515625,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "HB Torshavn",
+    "Country": "FAR",
+    "Level": 0,
+    "Elo": 1052.27929688,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Larne",
+    "Country": "NIR",
+    "Level": 0,
+    "Elo": 1051.57678223,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Septemvri Sofia",
+    "Country": "BUL",
+    "Level": 1,
+    "Elo": 1050.7244873,
+    "From": "2024-09-15",
+    "To": "2024-09-20"
+  },
+  {
+    "Rank": "None",
+    "Club": "Cliftonville",
+    "Country": "NIR",
+    "Level": 0,
+    "Elo": 1049.29406738,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Marsaxlokk",
+    "Country": "MLT",
+    "Level": 0,
+    "Elo": 1047.99804688,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "FC Infonet",
+    "Country": "EST",
+    "Level": 0,
+    "Elo": 1047.44018555,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Tekstilac Odzaci",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1046.34008789,
+    "From": "2024-09-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Kalev",
+    "Country": "EST",
+    "Level": 0,
+    "Elo": 1044.21179199,
+    "From": "2024-08-16",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Sliema Wanderers",
+    "Country": "MLT",
+    "Level": 0,
+    "Elo": 1039.86315918,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Podgorica",
+    "Country": "MNT",
+    "Level": 0,
+    "Elo": 1026.43237305,
+    "From": "2024-08-14",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Indija",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 1022.43994141,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Caernarfon Town",
+    "Country": "WAL",
+    "Level": 0,
+    "Elo": 1006.23669434,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Bala",
+    "Country": "WAL",
+    "Level": 0,
+    "Elo": 995.398925781,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Connahs Quay",
+    "Country": "WAL",
+    "Level": 0,
+    "Elo": 994.74621582,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Radnik Surdulica",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 992.010986328,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Jedinstvo Ub",
+    "Country": "SRB",
+    "Level": 1,
+    "Elo": 991.098571777,
+    "From": "2024-09-17",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Escaldes",
+    "Country": "AND",
+    "Level": 0,
+    "Elo": 965.379699707,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Lincoln",
+    "Country": "GIB",
+    "Level": 0,
+    "Elo": 963.103393555,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "St Josephs",
+    "Country": "GIB",
+    "Level": 0,
+    "Elo": 907.801635742,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Escale",
+    "Country": "AND",
+    "Level": 0,
+    "Elo": 901.415161133,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "FCB Magpies",
+    "Country": "GIB",
+    "Level": 0,
+    "Elo": 896.816345215,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Atletic Club Escaldes",
+    "Country": "AND",
+    "Level": 0,
+    "Elo": 880.255310059,
+    "From": "2024-08-30",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "SS Virtus",
+    "Country": "SMR",
+    "Level": 0,
+    "Elo": 708.203552246,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "Tre Penne",
+    "Country": "SMR",
+    "Level": 0,
+    "Elo": 695.522399902,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  },
+  {
+    "Rank": "None",
+    "Club": "La Fiorita",
+    "Country": "SMR",
+    "Level": 0,
+    "Elo": 690.315490723,
+    "From": "2024-08-02",
+    "To": "2024-10-03"
+  }
+]
