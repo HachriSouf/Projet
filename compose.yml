@@ -43,11 +43,12 @@ services:
     networks:
       - shrp-ntwrk
     healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.runCommand('ping')"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-      start_period: 40s
+      test : "none"
+      # test: ["CMD", "mongosh", "--eval", "db.runCommand('ping')"]
+      # interval: 10s
+      # timeout: 5s
+      # retries: 3
+      # start_period: 40s
 
   gateaway-service:
     build:
@@ -84,6 +85,18 @@ services:
     depends_on:
       rabbitmq:
         condition: service_healthy
+      auth-service:
+        condition: service_started
+      customer-service:
+        condition: service_started
+      betting-service:
+        condition: service_started
+      payement-service:
+        condition: service_started
+      match-service:
+        condition: service_started
+      odd-service:
+        condition: service_started
 
 
         
@@ -97,12 +110,104 @@ services:
       interval: 10s
       timeout: 10s
       retries: 3
+      start_period: 30s
     ports: 
     - "5672:5672"   
     - "15672:15672" 
     networks:
     - shrp-ntwrk
 
+  betting-service:
+    build:
+      context: ./betting-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./betting-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./betting-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+        
+  payement-service:
+    build:
+      context: ./payement-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./payement-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4001:4001"
+    env_file:
+      - ./payement-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+  match-service:
+    build:
+      context: ./match-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./match-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4002:4002"
+    env_file:
+      - ./match-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+
+  odd-service:
+    build:
+      context: ./odd-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./odd-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4005:4005"
+    env_file:
+      - ./odd-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy     
+  
+  team-service:
+    build:
+      context: ./team-service
+    ports:
+      - 4006:4006
+    env_file:
+      - ./team-service/.env
+    volumes:
+      - ./team-service:/app
+      - ./node_modules:/app/node_modules
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+    networks:
+      - shrp-ntwrk
+          
 networks:
   shrp-ntwrk:
     driver: bridge

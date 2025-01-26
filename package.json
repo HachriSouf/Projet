@@ -4,6 +4,7 @@
     "auth-service",
     "customer-service",
     "gateaway-service",
+    "team-service",
    "notification-service"
   ]
 }
