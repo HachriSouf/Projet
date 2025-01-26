@@ -44,4 +44,53 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.post('/start/:id', async (req, res) => {
+  try {
+    const matchId = req.params.id;
+
+    // Rechercher le match par ID
+    const match = await Match.findById(matchId);
+    if (!match) {
+      return res.status(404).send({ error: 'Match introuvable.' });
+    }
+
+    // Vérifier si le match est déjà démarré ou terminé
+    if (match.status !== 'scheduled') {
+      return res.status(400).send({ error: 'Le match a déjà démarré ou est terminé.' });
+    }
+
+    // Mettre à jour le statut à "in_progress"
+    match.status = 'in_progress';
+    await match.save();
+
+    res.status(200).send({
+      message: 'Match démarré avec succès. Les scores seront mis à jour après 10 secondes.',
+      match: {
+        homeTeam: match.homeTeam,
+        awayTeam: match.awayTeam,
+        status: match.status,
+      },
+    });
+
+    // Simuler les scores et attendre 10 secondes avant de terminer le match
+    setTimeout(async () => {
+      const homeScore = Math.floor(Math.random() * 6); // Score entre 0 et 5
+      const awayScore = Math.floor(Math.random() * 6);
+
+      // Mettre à jour le match avec les scores finaux
+      match.score.home = homeScore;
+      match.score.away = awayScore;
+      match.status = 'completed';
+      await match.save();
+
+      console.log(`Match terminé ! Résultat : ${match.homeTeam} ${homeScore} - ${awayScore} ${match.awayTeam}`);
+    }, 10000); // Attendre 10 secondes (10 000 ms)
+
+  } catch (err) {
+    console.error('Erreur lors du démarrage du match :', err);
+    res.status(500).send({ error: 'Erreur lors du démarrage du match.' });
+  }
+});
+
+
 module.exports = router;
