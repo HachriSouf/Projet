@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Exposer le port du service
-EXPOSE 4007
+EXPOSE 4006
 
 # Commande pour démarrer l'application
 CMD ["npm", "start"]

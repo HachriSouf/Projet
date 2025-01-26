@@ -164,7 +164,7 @@ services:
       - ./match-service:/app
       - ./node_modules:/app/node_modules
     ports:
-      - "4002:4002"
+      - "4007:4007"
     env_file:
       - ./match-service/.env
     networks:
@@ -172,6 +172,9 @@ services:
     depends_on:
       mongo-db:
         condition: service_healthy
+      team-service: # Ajout de team-service
+        condition: service_started
+        
 
   odd-service:
     build:
@@ -191,6 +194,22 @@ services:
         condition: service_healthy
       rabbitmq:
         condition: service_healthy     
+  
+  team-service:
+    build:
+      context: ./team-service
+    ports:
+      - 4006:4006
+    env_file:
+      - ./team-service/.env
+    volumes:
+      - ./team-service:/app
+      - ./node_modules:/app/node_modules
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+    networks:
+      - shrp-ntwrk
           
 networks:
   shrp-ntwrk:

@@ -9,6 +9,7 @@
    "bookmaker-service",
    "match-service",
    "payement-service",
-   "odd-service"
+   "odd-service",
+   "team-service"
   ]
 }
