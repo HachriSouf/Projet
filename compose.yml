@@ -164,7 +164,7 @@ services:
       - ./match-service:/app
       - ./node_modules:/app/node_modules
     ports:
-      - "4002:4002"
+      - "4007:4007"
     env_file:
       - ./match-service/.env
     networks:
@@ -172,6 +172,9 @@ services:
     depends_on:
       mongo-db:
         condition: service_healthy
+      team-service: # Ajout de team-service
+        condition: service_started
+        
 
   odd-service:
     build:

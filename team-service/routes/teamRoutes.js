@@ -2,7 +2,10 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const Team = require('../models/Team'); // Modèle MongoDB
+const mongoose = require('mongoose'); // Ajout de l'import manquant
 const router = express.Router();
+const axios = require('axios');
+
 
 router.post('/import', async (req, res) => {
   try {
@@ -64,4 +67,24 @@ router.get('/', async (req, res) => {
     res.status(500).send('Erreur lors de la récupération des équipes.');
   }
 });
+
+router.get('/:id', async (req, res) => {
+  try {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).send('ID invalide.');
+    }
+
+    const team = await Team.findById(req.params.id);
+    if (!team) {
+      return res.status(404).send('Équipe introuvable.');
+    }
+    res.status(200).json(team);
+  } catch (err) {
+    console.error('Erreur lors de la récupération de l\'équipe :', err);
+    res.status(500).send('Erreur lors de la récupération de l\'équipe.');
+  }
+});
+
+
+
 module.exports = router;
