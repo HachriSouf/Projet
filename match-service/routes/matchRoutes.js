@@ -7,32 +7,71 @@ const router = express.Router();
 const teamServiceUrl = process.env.TEAM_SERVICE_URL;
 
 router.post('/', async (req, res) => {
-    try {
-      const { homeTeam, awayTeam, date } = req.body;
-  
-      // Vérifiez si les équipes existent
-      const homeTeamResponse = await axios.get(`http://team-service:4006/teams/${homeTeam}`);
-      const awayTeamResponse = await axios.get(`http://team-service:4006/teams/${awayTeam}`);
-  
-      if (!homeTeamResponse.data || !awayTeamResponse.data) {
-        return res.status(404).json({ message: "L'une des équipes n'existe pas." });
-      }
-  
-      // Créez le match
-      const match = new Match({
-        homeTeam,
-        awayTeam,
-        date,
-      });
-  
-      await match.save();
-      res.status(201).json({ message: 'Match ajouté avec succès.', match });
-    } catch (error) {
-      console.error('Erreur lors de l\'ajout du match :', error);
-      res.status(500).json({ message: 'Erreur lors de l\'ajout du match.' });
+  try {
+    const { homeTeam, awayTeam } = req.body;
+
+    // Vérification des champs requis
+    if (!homeTeam || !awayTeam) {
+      return res.status(400).json({ error: 'Les champs homeTeam et awayTeam sont requis.' });
     }
-  });
-  
+
+    // Obtenir la date actuelle
+    const date = new Date();
+
+    // Appel à team-service pour récupérer les coefficients des équipes
+    const homeResponse = await axios.get(`http://team-service:4006/teams/name/${homeTeam}`);
+    const awayResponse = await axios.get(`http://team-service:4006/teams/name/${awayTeam}`);
+
+    const homeTeamData = homeResponse.data;
+    const awayTeamData = awayResponse.data;
+
+    if (!homeTeamData || !awayTeamData) {
+      return res.status(404).json({ error: 'Une ou les deux équipes sont introuvables.' });
+    }
+
+    const homeCoefficient = homeTeamData.coefficient;
+    const awayCoefficient = awayTeamData.coefficient;
+
+    // Calcul des probabilités
+    const totalCoefficient = homeCoefficient + awayCoefficient;
+    const probHome = homeCoefficient / totalCoefficient;
+    const probAway = awayCoefficient / totalCoefficient;
+    const probDraw = Math.min(homeCoefficient, awayCoefficient) / (totalCoefficient * 2);
+
+    // Calcul des cotes
+    const homeOdd = (1 / probHome).toFixed(2);
+    const awayOdd = (1 / probAway).toFixed(2);
+    const drawOdd = (1 / probDraw).toFixed(2);
+
+    // Création et sauvegarde du match
+    const match = new Match({
+      homeTeam,
+      awayTeam,
+      date, // Utilisation de la date actuelle
+      status: 'scheduled',
+      score: {
+        home: 0,
+        away: 0,
+      },
+    });
+
+    await match.save();
+
+    res.status(201).json({
+      message: 'Match créé avec succès avec la date d\'aujourd\'hui.',
+      match,
+      odds: {
+        homeOdd,
+        awayOdd,
+        drawOdd,
+      },
+    });
+  } catch (error) {
+    console.error('Erreur lors de la création du match :', error);
+    res.status(500).json({ error: 'Erreur lors de la création du match.' });
+  }
+});
+
 // Route pour récupérer tous les matches
 router.get('/', async (req, res) => {
   try {
@@ -92,6 +131,10 @@ router.post('/start/:id', async (req, res) => {
   }
 });
 
+
+
+
+
 // Route pour récupérer un match par ID
 router.get('/:id', async (req, res) => {
   try {
@@ -105,6 +148,23 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ error: 'Erreur lors de la récupération du match.' });
   }
 });
+
+router.get('/odds/:matchId', async (req, res) => {
+  try {
+    const { matchId } = req.params;
+
+    // Appel HTTP vers l'API du odd-service
+    const response = await axios.get(`http://odd-service:4008/odds/${matchId}`);
+
+    res.status(200).json(response.data);
+  } catch (error) {
+    console.error('Erreur lors de la récupération des cotes :', error.message);
+    res.status(500).json({ error: 'Erreur lors de la récupération des cotes.' });
+  }
+});
+
+
+
 
 
 module.exports = router;
