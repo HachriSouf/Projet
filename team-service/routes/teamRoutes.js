@@ -85,6 +85,22 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.get('/name/:teamName', async (req, res) => {
+  try {
+    const { teamName } = req.params;
+
+    // Recherche dans la base de données par le nom
+    const team = await Team.findOne({ name: teamName });
+    if (!team) {
+      return res.status(404).json({ error: 'Équipe introuvable.' });
+    }
+
+    res.status(200).json(team);
+  } catch (err) {
+    console.error('Erreur lors de la récupération de l\'équipe :', err);
+    res.status(500).json({ error: 'Erreur lors de la récupération de l\'équipe.' });
+  }
+});
 
 
 module.exports = router;

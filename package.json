@@ -5,6 +5,9 @@
     "customer-service",
     "gateaway-service",
     "team-service",
-   "notification-service"
-  ]
+    "notification-service"
+  ],
+  "dependencies": {
+    "mongoose": "^8.9.5"
+  }
 }
