@@ -66,10 +66,11 @@ router.post("/sign-up", async (req, res) => {
     const user = { username, password, email };
     console.log("Making request to auth service...");
     const authResponse = await authService.post("/auth/register", user);
-
     const registrationToken = authResponse.data.registrationToken;
-
+    const USER_ID = authResponse.data.userId;
+    console.log("user_id :" ,USER_ID);
     const customerData = new Customer({
+      user_id : USER_ID,
       username,
       FirstName: firstname,
       LastName: lastname,

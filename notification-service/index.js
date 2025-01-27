@@ -227,7 +227,54 @@ The Real Deal Team`;
   });
 
 
+////////////////////////////
+await amqpService.consumeFromQueue("WIN", async (msg) => {
+  if (msg) {
+    console.log("Message received from queue: WIN");
+    const bet = JSON.parse(msg.content.toString());
+    console.log("Processing bet win data:", bet);
 
+    const htmlMessage = `
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+        <h1 style="text-align: center; color: #28a745;">Congratulations, You Won!</h1>
+        <p>Hi <strong>${bet.email}</strong>,</p>
+        <p>Your bet on the match <strong>${bet.matchId}</strong> has been successful!</p>
+        <p>Amount Bet: <strong>$${bet.betAmount}</strong></p>
+        <p>Potential Win: <strong>$${bet.potentialWin}</strong></p>
+        <p>Thank you for trusting <strong>The Real Deal</strong>.</p>
+        <p>Best regards,<br/>The Real Deal Team</p>
+      </div>`;
+
+    const textMessage = `Congratulations, You Won!
+Hi ${bet.email},
+
+Your bet on the match ${bet.matchId} has been successful!
+
+Amount Bet: $${bet.betAmount}
+Potential Win: $${bet.potentialWin}
+Your new Balance: $${bet.updatedBalance}
+
+Thank you for trusting The Real Deal.
+
+Best regards,
+The Real Deal Team`;
+
+    const subject = "Congratulations, You Won!";
+    const from = "servicesmicro46@gmail.com";
+    const fromLabel = "The Real Deal";
+    const to = bet.email || "placeholder@example.com";
+
+    try {
+      await sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
+      console.log("Win notification email sent successfully to:", to);
+    } catch (error) {
+      console.error("Error sending win notification email:", error);
+    }
+  } else {
+    console.log("No message received from queue: WIN.");
+  }
+});
+//////////////////////
 
   } catch (error) {
     console.error("Error during RabbitMQ connection or consumption:", error);

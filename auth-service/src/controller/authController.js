@@ -45,6 +45,7 @@ exports.register = async (req, res) => {
         message: 'User created successfully',
         refreshToken,
         registrationToken,
+        userId: newUser._id
       });
     } catch (err) {
       console.error(err);
@@ -181,6 +182,25 @@ exports.deleteUser = async (req, res) => {
     }
 
 
+};
+exports.getUserEmailById = async (req, res) => {
+    const { id } = req.params; // Get the id from the route parameter
+
+    try {
+        // Find the user by their ID
+        const user = await User.findById(id);
+
+        // If the user does not exist
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Respond with the user's email
+        res.status(200).json({ email: user.email });
+    } catch (err) {
+        console.error('Error retrieving user email:', err);
+        res.status(500).json({ message: 'Server error' });
+    }
 };
 
 exports.doubleOptIn = async (req, res) => {

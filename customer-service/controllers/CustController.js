@@ -3,8 +3,8 @@ const Customer = require('../models/Customer'); // Importation du modèle Custom
 // Fonction pour créer un client
 exports.createCustomer = async (req, res) => {
   try {
-    const { username, FirstName, LastName, Number } = req.body; // Récupération des données du corps de la requête
-
+    const { user_id, username, FirstName, LastName, Number } = req.body; // Récupération des données du corps de la requête
+    console.log("les données : ", req.body);
     // Validation basique pour s'assurer que tous les champs nécessaires sont fournis
     if (!username || !FirstName || !LastName || !Number) {
       return res.status(400).json({ message: 'All fields are required' }); // Retourne une erreur si des champs manquent
@@ -12,6 +12,7 @@ exports.createCustomer = async (req, res) => {
 
     // Création d'une nouvelle instance de Customer avec les données fournies
     const newCustomer = new Customer({
+      user_id,
       username,
       FirstName,
       LastName,

@@ -1,9 +1,14 @@
 const AMQPService = require("../../AMQPService/AMQPService");
-const axios = require('axios');
-const Bet = require("../model/bet"); 
+const axios = require("axios");
+const Bet = require("../model/bet");
 
 const customerService = axios.create({
   baseURL: "http://trd_project-customer-service-1:5000",
+  timeout: 5000,
+  headers: { "Content-Type": "application/json" },
+});
+const authService = axios.create({
+  baseURL: "http://trd_project-auth-service-1:3000",
   timeout: 5000,
   headers: { "Content-Type": "application/json" },
 });
@@ -34,6 +39,7 @@ const consumeMatchEndedMessages = async () => {
 
         const allCustomersResponse = await customerService.get(`/customer/all-customers`);
         const allCustomers = allCustomersResponse.data.customers;
+        console.log("All customers:", allCustomers);
 
         if (!allCustomers || allCustomers.length === 0) {
           console.error("No customers found.");
@@ -42,7 +48,6 @@ const consumeMatchEndedMessages = async () => {
 
         // Process each bet
         for (const bet of bets) {
-
           const isWin = score.home >= score.away; // Adjust this condition as needed
           bet.status = isWin ? "win" : "lost";
 
@@ -50,8 +55,7 @@ const consumeMatchEndedMessages = async () => {
           console.log(`Bet ${bet._id} updated to status: ${bet.status}`);
 
           if (isWin) {
-
-            const customer = allCustomers.find((cust) => cust.userId === bet.userId);
+            const customer = allCustomers.find((cust) => cust.user_id === String(bet.userId));
 
             if (!customer) {
               console.error(`Customer not found for userId: ${bet.userId}`);
@@ -66,7 +70,22 @@ const consumeMatchEndedMessages = async () => {
             console.log(
               `Balance updated for user ${username}: New balance = ${updatedBalance}`
             );
-            await sendBetWinToQueue(bet);
+
+            // Get the email of the user
+            try {
+              const emailResponse = await authService.get(`/auth/user/${bet.userId}`);
+              const email = emailResponse.data.email;
+
+              // Add email to the bet object
+              const betWithEmail = { ...bet.toObject(), email, updatedBalance};
+
+              console.log(`Retrieved email for bet ${bet._id}: ${email}`);
+
+              // Send bet with email to the queue
+              await sendBetWinToQueue(betWithEmail);
+            } catch (err) {
+              console.error(`Error retrieving email for userId ${bet.userId}:`, err.message);
+            }
           }
         }
       } else {
@@ -91,10 +110,9 @@ const sendBetWinToQueue = async (bet) => {
     console.error("Error sending message to RabbitMQ:", error.message);
   } finally {
     setTimeout(async () => {
-      await amqpService.close(); 
+      await amqpService.close();
     }, 5000);
   }
 };
-
 
 module.exports = consumeMatchEndedMessages;
