@@ -235,31 +235,49 @@ await amqpService.consumeFromQueue("WIN", async (msg) => {
     console.log("Processing bet win data:", bet);
 
     const htmlMessage = `
-      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
-        <h1 style="text-align: center; color: #28a745;">Congratulations, You Won!</h1>
-        <p>Hi <strong>${bet.email}</strong>,</p>
-        <p>Your bet on the match <strong>${bet.matchId}</strong> has been successful!</p>
-        <p>Amount Bet: <strong>$${bet.betAmount}</strong></p>
-        <p>Potential Win: <strong>$${bet.potentialWin}</strong></p>
-        <p>Thank you for trusting <strong>The Real Deal</strong>.</p>
-        <p>Best regards,<br/>The Real Deal Team</p>
+      <div style="font-family: Arial, sans-serif; line-height: 1.8; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+        <h1 style="text-align: center; color: #28a745;">🎉 Congratulations, You Won! 🎉</h1>
+        <p>Hi <strong>${bet.username}</strong>,</p>
+        <p>Your bet on <strong>${bet.homeTeam} vs ${bet.awayTeam}</strong> has paid off!</p>
+        <p><strong>Score:</strong> ${bet.score.home} - ${bet.score.away}</p>
+        <p><strong>Selected Outcome:</strong> ${
+          bet.selectedOutcome === "1"
+            ? bet.homeTeam // Home Team name
+            : bet.selectedOutcome === "2"
+            ? bet.awayTeam // Away Team name
+            : "Draw" // For a draw
+        }</p>
+        <p><strong>Amount Bet:</strong> $${bet.betAmount}</p>
+        <p><strong>Winnings:</strong> $${bet.potentialWin}</p>
+        <p>Your updated balance is now <strong>$${bet.updatedBalance}</strong>.</p>
+        <p>Thank you for betting with <strong>The Real Deal</strong>. See you for the next match!</p>
+        <p style="text-align: center; margin-top: 20px;">
+          <a href="https://therealdeal.com" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #28a745; text-decoration: none; border-radius: 5px;">Visit Us</a>
+        </p>
       </div>`;
 
-    const textMessage = `Congratulations, You Won!
-Hi ${bet.email},
+    const textMessage = `
+Congratulations, You Won!
 
-Your bet on the match ${bet.matchId} has been successful!
+Hi ${bet.username},
 
+Your bet on ${bet.homeTeam} vs ${bet.awayTeam} has paid off!
+Score: ${bet.score.home} - ${bet.score.away}
+Selected Outcome: ${
+  bet.selectedOutcome === "1"
+    ? bet.homeTeam 
+    : bet.selectedOutcome === "2"
+    ? bet.awayTeam 
+    : "Draw" 
+}
 Amount Bet: $${bet.betAmount}
-Potential Win: $${bet.potentialWin}
-Your new Balance: $${bet.updatedBalance}
+Winnings: $${bet.potentialWin}
+Updated Balance: $${bet.updatedBalance}
 
-Thank you for trusting The Real Deal.
+Thank you for betting with The Real Deal. See you for the next match!
+`;
 
-Best regards,
-The Real Deal Team`;
-
-    const subject = "Congratulations, You Won!";
+    const subject = "🎉 You Won! Congratulations!";
     const from = "servicesmicro46@gmail.com";
     const fromLabel = "The Real Deal";
     const to = bet.email || "placeholder@example.com";
@@ -274,6 +292,7 @@ The Real Deal Team`;
     console.log("No message received from queue: WIN.");
   }
 });
+
 //////////////////////
 
   } catch (error) {

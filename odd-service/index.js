@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const oddsRoutes = require('./routes/oddsRoutes'); // Importer les routes
-
+const consumeMatchCreatedMessage = require('./routes/consume');
 dotenv.config();
 
 const app = express();
@@ -29,6 +29,11 @@ app.get('/', (req, res) => {
 
 // Utiliser les routes pour gérer les cotes
 app.use('/odds', oddsRoutes);
+
+(async () => {
+  console.log('Starting Match Consumer...');
+  await consumeMatchCreatedMessage();
+})();
 
 // Démarrage du serveur
 const PORT = process.env.PORT || 4008;

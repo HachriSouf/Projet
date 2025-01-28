@@ -34,6 +34,25 @@ const sendMatchEndedToQueue = async (match) => {
     await amqpService.connect();
     await amqpService.sendToQueue("Match_ended", JSON.stringify(match));
     console.log("Message sent to queue: Match_ended");
+    await amqpService.sendToQueue("Match_ended_combined", JSON.stringify(match));
+    console.log("Message sent to queue: Match_ended_combined");
+  } catch (error) {
+    console.error("Error sending message to RabbitMQ:", error.message);
+  } finally {
+    setTimeout(async () => {
+      await amqpService.close(); 
+    }, 5000);
+  }
+};
+const sendMatchAddedToQueue = async (match) => {
+  const amqpService = new AMQPService(
+    `amqp://${process.env.MESSAGE_BROKER_USER}:${process.env.MESSAGE_BROKER_PASSWORD}@${process.env.MESSAGE_BROKER}`
+  );
+
+  try {
+    await amqpService.connect();
+    await amqpService.sendToQueue("Match_added", JSON.stringify(match));
+    console.log("Message sent to queue: Match_added");
   } catch (error) {
     console.error("Error sending message to RabbitMQ:", error.message);
   } finally {
@@ -46,7 +65,7 @@ const sendMatchEndedToQueue = async (match) => {
 
 router.post('/', async (req, res) => {
     try {
-      const { homeTeam, awayTeam, date } = req.body;
+      const { homeTeam, awayTeam } = req.body;
   
       // Vérifiez si les équipes existent
       const homeTeamResponse = await axios.get(`http://team-service:4006/teams/${homeTeam}`);
@@ -60,10 +79,11 @@ router.post('/', async (req, res) => {
       const match = new Match({
         homeTeam : homeTeamResponse.data.name,
         awayTeam : awayTeamResponse.data.name,
-        date,
+        date: new Date(),
       });
   
       await match.save();
+      sendMatchAddedToQueue(match);
       
       res.status(201).json({ message: 'Match ajouté avec succès.', match });
     } catch (error) {

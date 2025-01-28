@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const betRoutes = require('./src/routes/betRoutes');
 const consumeMatchEndedMessages = require('./src/controller/Consume');
+const consumeCombinedBets = require('./src/controller/ConsumeCombined');
+
 
 
 const app = express();
@@ -33,6 +35,7 @@ app.use('/bet', betRoutes);
 (async () => {
   console.log('Starting Match Consumer...');
   await consumeMatchEndedMessages();
+  await consumeCombinedBets();
 })();
 
 const PORT = process.env.PORT || 4000;

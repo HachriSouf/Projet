@@ -28,7 +28,13 @@ const consumeMatchEndedMessages = async () => {
         const matchData = JSON.parse(msg.content.toString());
         console.log("Processing match data:", matchData);
 
-        const { matchId, score } = matchData;
+        const { matchId, homeTeam, awayTeam, score, date, status } = matchData;
+
+        // Verify the match status is completed
+        if (status !== "completed") {
+          console.log(`Match ${matchId} is not completed. Skipping processing.`);
+          return;
+        }
 
         // Retrieve all bets associated with the match
         const bets = await Bet.find({ matchId });
@@ -48,12 +54,22 @@ const consumeMatchEndedMessages = async () => {
 
         // Process each bet
         for (const bet of bets) {
-          const isWin = score.home >= score.away; // Adjust this condition as needed
-          bet.status = isWin ? "win" : "lost";
+          let isWin = false;
 
+          // Check if the bet is a win based on the selectedOutcome
+          if (bet.selectedOutcome === "1" && score.home > score.away) {
+            isWin = true; // Home team wins
+          } else if (bet.selectedOutcome === "2" && score.away > score.home) {
+            isWin = true; // Away team wins
+          } else if (bet.selectedOutcome === "X" && score.home === score.away) {
+            isWin = true; // Draw
+          }
+
+          bet.status = isWin ? "win" : "lost";
           await bet.save();
           console.log(`Bet ${bet._id} updated to status: ${bet.status}`);
 
+          // Include detailed information for winners
           if (isWin) {
             const customer = allCustomers.find((cust) => cust.user_id === String(bet.userId));
 
@@ -76,13 +92,25 @@ const consumeMatchEndedMessages = async () => {
               const emailResponse = await authService.get(`/auth/user/${bet.userId}`);
               const email = emailResponse.data.email;
 
-              // Add email to the bet object
-              const betWithEmail = { ...bet.toObject(), email, updatedBalance};
+              // Add all the required information to send to the notification service
+              const betWithDetails = {
+                email,
+                username,
+                matchId,
+                matchDate: date, // From the match data
+                homeTeam,
+                awayTeam,
+                score,
+                betAmount: bet.betAmount,
+                selectedOutcome: bet.selectedOutcome,
+                potentialWin: bet.potentialWin,
+                updatedBalance,
+              };
 
-              console.log(`Retrieved email for bet ${bet._id}: ${email}`);
+              console.log(`Prepared detailed data for bet ${bet._id}:`, betWithDetails);
 
-              // Send bet with email to the queue
-              await sendBetWinToQueue(betWithEmail);
+              // Send detailed information to the notification service queue
+              await sendBetWinToQueue(betWithDetails);
             } catch (err) {
               console.error(`Error retrieving email for userId ${bet.userId}:`, err.message);
             }

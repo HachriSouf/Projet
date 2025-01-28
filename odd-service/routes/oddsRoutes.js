@@ -3,68 +3,73 @@ const Odd = require('../models/Odd');
 const router = express.Router();
 const axios = require('axios');
 
+// const matchService = axios.create({
+//   baseURL: "http://trd_project-match-service-1:4007",
+//   timeout: 5000,
+//   headers: { "Content-Type": "application/json" },
+// });
+// router.post('/', async (req, res) => {
+//   try {
+//     const { matchId } = req.body;
 
-router.post('/', async (req, res) => {
-  try {
-    const { homeTeam, awayTeam, matchId } = req.body;
+//     if (!matchId) {
+//       return res.status(400).json({ error: 'matchId est requis.' });
+//     }
 
-    if (!homeTeam || !awayTeam || !matchId) {
-      return res.status(400).json({ error: 'Tous les champs sont requis.' });
-    }
+//     const matchResponse = await matchService.get(`/matches/${matchId}`);
+//     const match = matchResponse.data.match;
 
-    // Appel à team-service pour récupérer les coefficients des équipes
-    const homeResponse = await axios.get(`http://team-service:4006/teams/name/${homeTeam}`);
-    const awayResponse = await axios.get(`http://team-service:4006/teams/name/${awayTeam}`);
+//     const homeTeam = match.homeTeam;
+//     const awayTeam = match.awayTeam;
 
-    const homeTeamData = homeResponse.data;
-    const awayTeamData = awayResponse.data;
+//     const homeResponse = await axios.get(`http://team-service:4006/teams/name/${homeTeam}`);
+//     const awayResponse = await axios.get(`http://team-service:4006/teams/name/${awayTeam}`);
 
-    if (!homeTeamData || !awayTeamData) {
-      return res.status(404).json({ error: 'Une ou les deux équipes sont introuvables.' });
-    }
+//     const homeTeamData = homeResponse.data;
+//     const awayTeamData = awayResponse.data;
+    
+//     if (!homeTeamData || !awayTeamData) {
+//       return res.status(404).json({ error: 'Une ou les deux équipes sont introuvables.' });
+//     }
 
-    const homeCoefficient = homeTeamData.coefficient;
-    const awayCoefficient = awayTeamData.coefficient;
+//     const homeCoefficient = homeTeamData.coefficient;
+//     const awayCoefficient = awayTeamData.coefficient;
 
-// Calcul des probabilités
-const totalCoefficient = homeCoefficient + awayCoefficient;
-const probHome = homeCoefficient / totalCoefficient;
-const probAway = awayCoefficient / totalCoefficient;
+// const totalCoefficient = homeCoefficient + awayCoefficient;
+// const probHome = homeCoefficient / totalCoefficient;
+// const probAway = awayCoefficient / totalCoefficient;
 
-// Calcul dynamique de la probabilité de match nul
-let probDraw = 1 - (probHome + probAway);
+// let probDraw = 1 - (probHome + probAway);
 
-// Assurez-vous que probDraw est supérieur à 0 pour éviter des erreurs de calcul
-if (probDraw <= 0) {
-  probDraw = 0.01; // Valeur minimale pour éviter une division par zéro
-}
+// if (probDraw <= 0) {
+//   probDraw = 0.01; 
+// }
 
-// Calcul des cotes
-const homeOdd = (1 / probHome).toFixed(2);
-const awayOdd = (1 / probAway).toFixed(2);
-const drawOdd = (1 / probDraw).toFixed(2);
+// const homeOdd = (1 / probHome).toFixed(2);
+// const awayOdd = (1 / probAway).toFixed(2);
+// const drawOdd = (1 / probDraw).toFixed(2);
 
-console.log('Probabilités:', { probHome, probAway, probDraw });
-console.log('Cotes calculées:', { homeOdd, drawOdd, awayOdd });
+// console.log('Probabilités:', { probHome, probAway, probDraw });
+// console.log('Cotes calculées:', { homeOdd, drawOdd, awayOdd });
 
-    // Création et sauvegarde des cotes
-    const odd = new Odd({
-      homeTeam,
-      awayTeam,
-      homeOdd,
-      drawOdd,
-      awayOdd,
-      matchId,
-    });
+//     const odd = new Odd({
+//       homeTeam,
+//       awayTeam,
+//       homeOdd,
+//       drawOdd,
+//       awayOdd,
+//       matchId,
+//     });
 
-    await odd.save();
-    res.status(201).json({ message: 'Cotes calculées et ajoutées avec succès.', odd });
-  } catch (error) {
-    console.error('Erreur lors de l\'ajout des cotes :', error);
-    res.status(500).json({ error: 'Erreur lors de l\'ajout des cotes.' });
-  }
-});;
-// Récupérer les cotes d'un match
+//     await odd.save();
+//     res.status(201).json({ message: 'Cotes calculées et ajoutées avec succès.', odd });
+//   } catch (error) {
+//     console.error('Erreur lors de l\'ajout des cotes :', error);
+//     res.status(500).json({ error: 'Erreur lors de l\'ajout des cotes.' });
+//   }
+// });;
+
+
 router.get('/:matchId', async (req, res) => {
     try {
       const { matchId } = req.params;
@@ -81,8 +86,8 @@ router.get('/:matchId', async (req, res) => {
     }
   });
 
-  // Mettre à jour les cotes d'un match
-router.put('/:matchId', async (req, res) => {
+
+  router.put('/:matchId', async (req, res) => {
     try {
       const { matchId } = req.params;
       const { odds } = req.body;
