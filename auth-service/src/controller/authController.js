@@ -5,47 +5,57 @@ const crypto = require("crypto");
 
 
 exports.register = async (req, res) => {
-    const { username, password, email } = req.body;
+    const { username, password, email, role } = req.body; // Ajout de `role` dans la récupération des données
   
     if (!username || !password || !email) {
       return res.status(400).json({ message: 'All fields are required' });
     }
+  
     try {
+      // Vérifier si l'utilisateur existe déjà
       const existingUser = await User.findOne({ email });
       if (existingUser) {
         return res.status(400).json({ message: 'User already exists' });
       }
   
+      // Hasher le mot de passe
       const saltRounds = 10;
       const hashedPassword = await bcrypt.hash(password, saltRounds);
   
+      // Générer un token opaque pour l'enregistrement
       const generateOpaqueToken = (length = 32) =>
-        crypto.randomBytes(length).toString("hex");
+        crypto.randomBytes(length).toString('hex');
   
-      const registrationToken = generateOpaqueToken();
+      // Définir `registrationToken` en fonction de la présence de `role`
+      const registrationToken = role ? null : generateOpaqueToken();
   
+      // Créer une nouvelle instance utilisateur
       const newUser = new User({
         username,
         email,
         password: hashedPassword,
         registrationToken,
+        role, // Ajouter le rôle si présent
       });
   
+      // Générer un refresh token
       const refreshToken = jwt.sign(
-        { userId: newUser._id },
+        { userId: newUser._id, role: role || 'user' },
         process.env.JWT_SECRET,
         { expiresIn: '7d' }
       );
   
       newUser.refreshToken = refreshToken;
   
+      // Sauvegarder l'utilisateur
       await newUser.save();
   
+      // Répondre avec succès
       res.status(201).json({
         message: 'User created successfully',
         refreshToken,
         registrationToken,
-        userId: newUser._id
+        userId: newUser._id,
       });
     } catch (err) {
       console.error(err);
@@ -110,6 +120,18 @@ exports.verify = async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(400).json({ message: 'Invalid token' });
+    }
+};
+exports.getAllUsersGamble = async (req, res) => {
+    try {
+        const users = await User.find({ role: 0 }).select('-password -refreshToken'); 
+        if (!users.length) {
+            return res.status(404).json({ message: 'No users with role 0 found.' });
+        }
+        res.status(200).json({ users });
+    } catch (err) {
+        console.error('Error retrieving users with role 0:', err);
+        res.status(500).json({ message: 'Server error' });
     }
 };
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const bookRoutes = require('./src/routes/bookRoutes');
 
 
 const app = express();
@@ -25,6 +26,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.get('/', (req, res) => {
   res.send('Service bookmaker en fonctionnement!');
 });
+
+app.use('/bookmaker',bookRoutes);
 
 const PORT = process.env.PORT || 4004;
 app.listen(PORT, () => {

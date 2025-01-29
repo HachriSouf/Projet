@@ -81,7 +81,12 @@ const customerService = axios.create({
   
       console.log("authResponse:", authResponse.data.user);
       const username = authResponse.data.user.username;
-  
+      const verified = authResponse.data.user.registrationToken;
+      if (verified !== null) {
+        return res
+          .status(403)
+          .json({ message: "You need to verify your account to play a bet" });
+      }
       // Vérifier le client via Customer-Service
       const customerResponse = await customerService.get(`/customer/${username}`);
       const customer = customerResponse.data.customer;
@@ -140,7 +145,11 @@ const customerService = axios.create({
       });
   
       console.log("Sending bet to queue...");
-      const sentBet = { ...newBet.toObject(), email: authResponse.data.user.email };
+
+      const homeTeam = match.homeTeam;
+      const awayTeam = match.awayTeam;
+      
+      const sentBet = { ...newBet.toObject(), email: authResponse.data.user.email, username : customer.username ,awayTeam,homeTeam};
       await sendBetCreatedMessageToQueue(sentBet);
   
       console.log("Bet sent to queue!");
@@ -171,7 +180,13 @@ const customerService = axios.create({
   
       const userId = authResponse.data.user._id;
       const username = authResponse.data.user.username;
-  
+      const verified = authResponse.data.user.registrationToken;
+      if (verified !== null) {
+        return res
+          .status(403)
+          .json({ message: "You need to verify your account to play a bet" });
+      }
+      
       const customerResponse = await customerService.get(`/customer/${username}`);
       const customer = customerResponse.data.customer;
   
@@ -187,7 +202,10 @@ const customerService = axios.create({
         if (!match) {
           return res.status(404).json({ message: `Match not found: ${bet.matchId}` });
         }
-  
+        bet.homeTeam = match.homeTeam;
+        bet.awayTeam = match.awayTeam;
+
+
         const oddResponse = await oddService.get(`/odds/${bet.matchId}`);
         const odd = oddResponse.data;
 
@@ -228,9 +246,10 @@ const customerService = axios.create({
         message: "Combined bet created successfully!",
         combinedBet,
       });
-  
+      const sentBet = { ...combinedBet.toObject(), email: authResponse.data.user.email, username : customer.username, bets};
+
       // Send message to RabbitMQ
-      await sendBetCombinedCreatedMessageToQueue(combinedBet);
+      await sendBetCombinedCreatedMessageToQueue(sentBet);
     } catch (error) {
       console.error("Error creating combined bet:", error);
       res.status(500).json({ message: "Server error." });

@@ -133,7 +133,7 @@ The Real Deal Team`;
         console.log("Message received from queue: bet_created");
         const bet = JSON.parse(msg.content.toString());
         console.log("Processing bet data:", bet);
-
+    
         // Préparer l'email
         const htmlMessage = `
           <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
@@ -141,33 +141,31 @@ The Real Deal Team`;
               <img src="${imageSrc}" alt="Logo" style="width: 100px; margin-bottom: 20px;" />
             </div>
             <h1 style="text-align: center; color: #007BFF;">Bet Confirmed!</h1>
-            <p>Hi <strong>${bet.userId}</strong>,</p>
-            <p>Your bet has been successfully placed for the match between <strong>${bet.matchId}</strong>.</p>
+            <p>Hi <strong>${bet.username}</strong>,</p>
+            <p>Your bet has been successfully placed for the match between <strong>${bet.homeTeam}</strong> and <strong>${bet.awayTeam}</strong>.</p>
             <p>Amount Bet: <strong>$${bet.betAmount}</strong></p>
             <p>Potential Win: <strong>$${bet.potentialWin}</strong></p>
             <p>Thank you for trusting <strong>The Real Deal</strong>.</p>
             <p>Good luck!</p>
             <p>Best regards,<br/>The Real Deal Team</p>
           </div>`;
-
+    
         const textMessage = `Your bet has been confirmed!
-Hi ${bet.userId},
-Your bet has been successfully placed for the match ${bet.matchId}.
-
-Amount Bet: $${bet.betAmount}
-Potential Win: $${bet.potentialWin}
-
-Thank you for trusting The Real Deal.
-
-Good luck!
-Best regards,
-The Real Deal Team`;
-
+    
+    Match: ${bet.homeTeam} vs ${bet.awayTeam}
+    Amount Bet: $${bet.betAmount}
+    Potential Win: $${bet.potentialWin}
+    
+    Thank you for trusting The Real Deal.
+    Good luck!
+    Best regards,
+    The Real Deal Team`;
+    
         const subject = "Bet Confirmation";
         const from = "servicesmicro46@gmail.com";
         const fromLabel = "The Real Deal";
         const to = bet.email || "placeholder@example.com"; // Remplace par l'email réel de l'utilisateur
-
+    
         try {
           sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
           console.log("Bet confirmation email sent successfully to:", to);
@@ -178,53 +176,7 @@ The Real Deal Team`;
         console.log("No message received from queue: bet_created.");
       }
     });
-  ////////////////////  
-  await amqpService.consumeFromQueue("payement_sucess", async (msg) => {
-    if (msg) {
-      console.log("Message received from queue: payement_sucess");
-      const payment = JSON.parse(msg.content.toString());
-      console.log("Processing payment data:", payment);
-
-      // Préparer l'email
-      const htmlMessage = `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
-          <div style="text-align: center;">
-          <img src="data:image/png;base64,${imageBase64}" alt="Logo" style="width: 100px; margin-bottom: 20px;" />
-            <h1 style="color: #28a745;">Payment Successful!</h1>
-            <p>Hi <strong>${payment.userId}</strong>,</p>
-            <p>Your payment of <strong>€${payment.amount}</strong> has been processed successfully.</p>
-            <p>Your new balance is: <strong>€${payment.newBalance}</strong>.</p>
-            <p>Thank you for trusting <strong>The Real Deal</strong>.</p>
-            <p>Best regards,<br/>The Real Deal Team</p>
-          </div>
-        </div>`;
-
-      const textMessage = `Payment Successful!
-        Hi ${payment.userId},
-
-          Your payment of €${payment.amount} has been processed successfully.
-          Your new balance is: €${payment.newBalance}.
-
-          Thank you for trusting The Real Deal.
-
-          Best regards,
-          The Real Deal Team`;
-
-      const subject = "Payment Confirmation";
-      const from = "servicesmicro46@gmail.com";
-      const fromLabel = "The Real Deal";
-      const to = payment.email || "placeholder@example.com"; 
-
-      try {
-        await sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
-        console.log("Payment confirmation email sent successfully to:", to);
-      } catch (error) {
-        console.error("Error sending payment confirmation email:", error);
-      }
-    } else {
-      console.log("No message received from queue: payement_Sucess.");
-    }
-  });
+    
 
 
 ////////////////////////////
@@ -295,6 +247,154 @@ Thank you for betting with The Real Deal. See you for the next match!
 
 //////////////////////
 
+
+await amqpService.consumeFromQueue("combinedBet_created", (msg) => {
+  if (msg) {
+    console.log("Message received from queue: combinedBet_created");
+
+    const combinedBet = JSON.parse(msg.content.toString());
+    console.log("Processing combined bet data:", {
+      user: combinedBet.userId,
+      bets: combinedBet.bets,
+      combinedOdd: combinedBet.combinedOdd,
+      amount: combinedBet.betAmount,
+      potentialWin: combinedBet.potentialWin
+    });
+
+    // Préparer l'email
+    const betDetailsHtml = combinedBet.bets
+      .map(bet => `<li>Match: <strong>${bet.homeTeam}</strong> vs <strong>${bet.awayTeam}</strong>, Outcome: <strong>${bet.selectedOutcome}</strong></li>`)
+      .join("");
+
+    const betDetailsText = combinedBet.bets
+      .map(bet => `Match: ${bet.homeTeam} vs ${bet.awayTeam}, Outcome: ${bet.selectedOutcome}`)
+      .join("\n");
+
+    const htmlMessage = `
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+        <div style="text-align: center;">
+          <img src="${imageSrc}" alt="Logo" style="width: 100px; margin-bottom: 20px;" />
+        </div>
+        <h1 style="text-align: center; color: #007BFF;">Combined Bet Confirmed!</h1>
+        <p>Hi,</p>
+        <p>Your combined bet has been successfully placed with the following details:</p>
+        <ul>${betDetailsHtml}</ul>
+        <p><strong>Total Odds:</strong> ${combinedBet.combinedOdd}</p>
+        <p><strong>Bet Amount:</strong> $${combinedBet.betAmount}</p>
+        <p><strong>Potential Win:</strong> $${combinedBet.potentialWin}</p>
+        <p>Thank you for trusting <strong>The Real Deal</strong>.</p>
+        <p>Good luck!</p>
+        <p>Best regards,<br/>The Real Deal Team</p>
+      </div>`;
+
+    const textMessage = `Your combined bet has been confirmed!
+
+Bet Details:
+${betDetailsText}
+
+Total Odds: ${combinedBet.combinedOdd}
+Bet Amount: $${combinedBet.betAmount}
+Potential Win: $${combinedBet.potentialWin}
+
+Thank you for trusting The Real Deal.
+Good luck!
+Best regards,
+The Real Deal Team`;
+
+    const subject = "Combined Bet Confirmation";
+    const from = "servicesmicro46@gmail.com";
+    const fromLabel = "The Real Deal";
+    const to = combinedBet.email || "placeholder@example.com"; // Remplace par l'email réel de l'utilisateur
+
+    try {
+      sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
+      console.log("Combined bet confirmation email sent successfully to:", to);
+    } catch (error) {
+      console.error("Error sending combined bet confirmation email:", error);
+    }
+  } else {
+    console.log("No message received from queue: bet_combined_created.");
+  }
+});
+
+////////////////////
+await amqpService.consumeFromQueue("Propose", (msg) => {
+  if (msg) {
+    console.log("Message received from queue: Propose");
+
+    const proposeData = JSON.parse(msg.content.toString());
+    console.log("Processing propose data:", proposeData);
+
+    const { users, bookmakerUsername, boostedOdds } = proposeData;
+
+    // Préparer les détails des cotes boostées pour les emails
+    const oddsHtml = boostedOdds
+      .map(
+        (odd) => `
+          <li>
+            Match: <strong>${odd.homeTeam}</strong> vs <strong>${odd.awayTeam}</strong><br>
+            Odds: Home: <strong>${odd.homeOdd}</strong>, Draw: <strong>${odd.drawOdd}</strong>, Away: <strong>${odd.awayOdd}</strong><br>
+            Date: <strong>${new Date(odd.date).toLocaleString()}</strong>
+          </li>
+        `
+      )
+      .join("");
+
+    const oddsText = boostedOdds
+      .map(
+        (odd) =>
+          `Match: ${odd.homeTeam} vs ${odd.awayTeam}, Odds: Home: ${odd.homeOdd}, Draw: ${odd.drawOdd}, Away: ${odd.awayOdd}, Date: ${new Date(
+            odd.date
+          ).toLocaleString()}`
+      )
+      .join("\n");
+
+    // Contenu des emails
+    const htmlMessage = `
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+        <h1 style="text-align: center; color: #007BFF;">Boosted Odds by ${bookmakerUsername}</h1>
+        <p>Hi,</p>
+        <p>The bookmaker <strong>${bookmakerUsername}</strong> is offering attractive odds on the following matches:</p>
+        <ul>${oddsHtml}</ul>
+        <p>Place your bets now on these boosted odds before they expire!</p>
+        <p>Best regards,<br/><strong>The Real Deal Team</strong></p>
+      </div>`;
+
+    const textMessage = `Boosted Odds by ${bookmakerUsername}
+
+The bookmaker ${bookmakerUsername} is offering attractive odds on the following matches:
+
+${oddsText}
+
+Place your bets now on these boosted odds before they expire!
+
+Best regards,
+The Real Deal Team`;
+
+    // Envoyer un email à chaque utilisateur
+    users.forEach((user) => {
+      const subject = "Boosted Odds Available!";
+      const to = user.email;
+      const from = "servicesmicro46@gmail.com";
+      const fromLabel = "The Real Deal";
+
+      try {
+        sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
+        console.log("Boosted odds email sent successfully to:", to);
+      } catch (error) {
+        console.error("Error sending boosted odds email to:", to, error.message);
+      }
+    });
+
+  } else {
+    console.log("No message received from queue: Propose.");
+  }
+});
+
+
+
+
+///////////////////////////////////////////////
   } catch (error) {
     console.error("Error during RabbitMQ connection or consumption:", error);
   }

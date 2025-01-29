@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   refreshToken: { type: String, default: null },
   registrationToken: {type: String, default:null},
-  role:{type: Number,default:0},
+  role: { type: Number,  enum: [0, 1], default: 0,},
   lastSignedAt: { type: String, default: null },
   createdAt: {type: Date, default: Date.now},
   registeredAt: {type: Date},

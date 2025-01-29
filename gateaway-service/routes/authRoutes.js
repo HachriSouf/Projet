@@ -18,6 +18,12 @@ const customerService = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
+const bookmakerService = axios.create({
+  baseURL: "http://trd_project-bookmaker-service-1:4004",
+  timeout: 5000,
+  headers: { "Content-Type": "application/json" },
+});
+
 const sendCustomerCreatedMessageToQueue = async (customer) => {
   const amqpService = new AMQPService(
     `amqp://${process.env.MESSAGE_BROKER_USER}:${process.env.MESSAGE_BROKER_PASSWORD}@${process.env.MESSAGE_BROKER}`
@@ -54,7 +60,50 @@ const sendCustomerRegistratedMessageToQueue = async (user) => {
   }
 };
 
+router.post('/bookmaker', async (req, res) => {
+  try {
+    const { username, password, firstname, lastname, email, Number } = req.body;
 
+    if (!username || !password || !firstname || !lastname || !email || !Number) {
+      return res.status(400).json({ error: 'All fields are required.' });
+    }
+
+    console.log('Making request to auth service for bookmaker...');
+    const user = { username, password, email, role: 1 }; 
+    const authResponse = await authService.post('/auth/register', user);
+
+    const USER_ID = authResponse.data.userId;
+    console.log('User ID from auth service:', USER_ID);
+
+    console.log('Making request to bookmaker service...');
+    const bookmakerData = {
+      user_id: USER_ID,
+      username,
+      FirstName: firstname,
+      LastName: lastname,
+      Number,
+      email,
+    };
+
+    const bookmakerResponse = await bookmakerService.post('/bookmaker/create', bookmakerData);
+
+    res.status(201).json({
+      message: 'Bookmaker created successfully',
+      authResponse: authResponse.data,
+      bookmakerResponse: bookmakerResponse.data,
+    });
+  } catch (error) {
+    console.error('Error occurred while creating bookmaker:', error.message);
+
+    if (error.response) {
+      return res.status(error.response.status).json({ error: error.response.data });
+    }
+
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+module.exports = router;
 router.post("/sign-up", async (req, res) => {
   try {
     const { username, password, firstname, lastname, email, Number } = req.body;

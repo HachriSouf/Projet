@@ -210,7 +210,22 @@ services:
         condition: service_healthy
     networks:
       - shrp-ntwrk
-          
+  bookmaker-service:
+    build:
+      context: ./bookmaker-service
+    ports:
+      - 4004:4004 
+    env_file:
+      - ./bookmaker-service/.env 
+    volumes:
+      - ./bookmaker-service:/app
+      - ./node_modules:/app/node_modules 
+    depends_on:
+      mongo-db:
+        condition: service_healthy 
+    networks:
+      - shrp-ntwrk 
+
 networks:
   shrp-ntwrk:
     driver: bridge
