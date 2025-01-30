@@ -3,6 +3,7 @@ const axios = require("axios");
 const Customer = require('../models/Customer');
 const User = require('../models/User');
 const AMQPService = require("../AMQPService/AMQPService");
+const { adminMiddleware } = require("../middleware/checkAuthorization");
 
 const router = express.Router();
 
@@ -60,7 +61,7 @@ const sendCustomerRegistratedMessageToQueue = async (user) => {
   }
 };
 
-router.post('/bookmaker', async (req, res) => {
+router.post('/bookmaker',adminMiddleware, async (req, res) => {
   try {
     const { username, password, firstname, lastname, email, Number } = req.body;
 
@@ -103,7 +104,6 @@ router.post('/bookmaker', async (req, res) => {
   }
 });
 
-module.exports = router;
 router.post("/sign-up", async (req, res) => {
   try {
     const { username, password, firstname, lastname, email, Number } = req.body;
@@ -236,18 +236,15 @@ router.post("/sign-out", async (req, res) => {
 
 router.get("/verify", async (req, res) => {
   try {
-    // Extraire le token du header Authorization
     const token = req.header("Authorization") && req.header("Authorization").split(" ")[1];
     if (!token) {
       return res.status(401).json({ message: "No token provided" });
     }
 
-    // Appeler le service d'authentification pour vérifier le token avec le bon header
     const verifyResult = await authService.get("/auth/verify", {
-      headers: { Authorization: `Bearer ${token}` }, // Passer le token correctement
+      headers: { Authorization: `Bearer ${token}` }, 
     });
 
-    // Retourner le résultat de la vérification au client
     res.status(200).json(verifyResult.data);
   } catch (error) {
     console.error("Error during token verification:", error.message);
@@ -270,7 +267,7 @@ router.get("/me", async (req, res) => {
     }
 
     const userResult = await authService.get("/auth/me", {
-      headers: { Authorization: `Bearer ${token}` }, // Passer le token correctement
+      headers: { Authorization: `Bearer ${token}` }, 
     });
 
     res.status(200).json(userResult.data);
@@ -287,28 +284,24 @@ router.get("/me", async (req, res) => {
   }
 });
 
-// Route pour supprimer un utilisateur via le service Gateway
 router.delete("/delete", async (req, res) => {
-  const token = req.header("Authorization") && req.header("Authorization").split(" ")[1]; // Récupère le token JWT depuis les headers
-
+  const token = req.header("Authorization") && req.header("Authorization").split(" ")[1]; 
   if (!token) {
-      return res.status(401).json({ message: "No token provided" }); // Si aucun token n'est fourni
+      return res.status(401).json({ message: "No token provided" }); 
   }
 
   try {
-      // Supprimer dans l'auth-service
       const authResponse = await authService.delete("/auth/delete", {
-          headers: { Authorization: `Bearer ${token}` }, // Envoie du token JWT dans les headers
-          data: req.body, // Passe les données du corps de la requête (email)
+          headers: { Authorization: `Bearer ${token}` }, 
+          data: req.body, 
       });
 
-      // Supprimer dans le customer-service
       const custResponse = await customerService.delete("/customer/delete-customer", {
-          headers: { Authorization: `Bearer ${token}` }, // Envoie du token JWT dans les headers
-          data: req.body, // Passe les données du corps de la requête (username)
+          headers: { Authorization: `Bearer ${token}` }, 
+          data: req.body, 
       });
 
-      // Si les deux suppressions réussissent, renvoyer une réponse de succès
+     
       return res.status(200).json({
           message: "User and customer deleted successfully",
           authService: authResponse.data,
@@ -317,7 +310,6 @@ router.delete("/delete", async (req, res) => {
   } catch (error) {
       console.error("Error during deletion:", error);
 
-      // Gérer les erreurs des services individuellement
       if (error.response) {
           return res.status(error.response.status).json({
               message: "Error from service",
@@ -325,17 +317,11 @@ router.delete("/delete", async (req, res) => {
           });
       }
 
-      // Erreur interne si quelque chose se passe mal
       return res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
-
-
-
-
-
-router.get("/healthcheck", async (req, res) => {
+router.get("/healthcheck",adminMiddleware , async (req, res) => {
   try
   { 
   const promises = 

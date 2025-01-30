@@ -1,18 +1,16 @@
 const express = require("express");
 const axios = require("axios");
-const authMiddleware = require("../middleware/checkAuthorization");
+const { adminMiddleware } = require("../middleware/checkAuthorization");
 
 const router = express.Router();
 
-// Configuration du service Customer
 const customerService = axios.create({
   baseURL: "http://trd_project-customer-service-1:5000",
   timeout: 5000,
   headers: { "Content-Type": "application/json" },
 });
 
-// Créer un client
-router.post("/createCustomer", authMiddleware, async (req, res) => {
+router.post("/createCustomer", adminMiddleware, async (req, res) => {
   try {
     const response = await customerService.post("/customer/createCustomer", req.body, {
       headers: { Authorization: req.header("Authorization") },
@@ -25,8 +23,7 @@ router.post("/createCustomer", authMiddleware, async (req, res) => {
   }
 });
 
-// Récupérer tous les clients
-router.get("/all-customers", authMiddleware, async (req, res) => {
+router.get("/all-customers", adminMiddleware, async (req, res) => {
   try {
     const response = await customerService.get("/customer/all-customers", {
       headers: { Authorization: req.header("Authorization") },
@@ -39,12 +36,11 @@ router.get("/all-customers", authMiddleware, async (req, res) => {
   }
 });
 
-// Trouver un client par username
-router.get("/:username", authMiddleware, async (req, res) => {
+router.get("/:user_id", adminMiddleware, async (req, res) => {
   try {
-    const { username } = req.params;
+    const { user_id } = req.params;
 
-    const response = await customerService.get(`/customer/${username}`, {
+    const response = await customerService.get(`/customer/${user_id}`, {
       headers: { Authorization: req.header("Authorization") },
     });
 
@@ -55,12 +51,11 @@ router.get("/:username", authMiddleware, async (req, res) => {
   }
 });
 
-// Mettre à jour un client par username
-router.put("/:username", authMiddleware, async (req, res) => {
+router.put("/:user_id", adminMiddleware, async (req, res) => {
   try {
-    const { username } = req.params;
+    const { user_id } = req.params;
 
-    const response = await customerService.put(`/${username}`, req.body, {
+    const response = await customerService.put(`/customer/${user_id}`, req.body, {
       headers: { Authorization: req.header("Authorization") },
     });
 
@@ -71,12 +66,11 @@ router.put("/:username", authMiddleware, async (req, res) => {
   }
 });
 
-// Suppression douce d'un client par username
-router.delete("/soft-delete/:username", authMiddleware, async (req, res) => {
+router.delete("/soft-delete/:user_id", adminMiddleware, async (req, res) => {
   try {
-    const { username } = req.params;
+    const { user_id } = req.params;
 
-    const response = await customerService.delete(`/customer/soft-delete/${username}`, {
+    const response = await customerService.delete(`/customer/soft-delete/${user_id}`, {
       headers: { Authorization: req.header("Authorization") },
     });
 
@@ -87,8 +81,7 @@ router.delete("/soft-delete/:username", authMiddleware, async (req, res) => {
   }
 });
 
-// Supprimer un client
-router.delete("/delete-customer", authMiddleware, async (req, res) => {
+router.delete("/delete-customer", adminMiddleware, async (req, res) => {
   try {
     const response = await customerService.delete("/customer/delete-customer", {
       data: req.body,
@@ -103,3 +96,4 @@ router.delete("/delete-customer", authMiddleware, async (req, res) => {
 });
 
 module.exports = router;
+

@@ -86,12 +86,10 @@ exports.login = async (req, res) => {
         // Generate refresh token (longer-lived)
         const refreshToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
-        // Store the refresh token in the user document
         user.refreshToken = refreshToken;
         user.lastSignedAt = new Date();
         await user.save();
 
-        // Send the tokens to the client
         res.status(200).json({ accessToken, refreshToken });
     } catch (err) {
         console.error(err);
@@ -107,7 +105,6 @@ exports.verify = async (req, res) => {
     }
 
     try {
-        // Verify the token using JWT
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
         // Find the user based on the decoded userId
@@ -122,6 +119,7 @@ exports.verify = async (req, res) => {
         res.status(400).json({ message: 'Invalid token' });
     }
 };
+
 exports.getAllUsersGamble = async (req, res) => {
     try {
         const users = await User.find({ role: 0 }).select('-password -refreshToken'); 
@@ -202,9 +200,8 @@ exports.deleteUser = async (req, res) => {
         // En cas d'erreur serveur
         res.status(500).json({ message: "Server error" });
     }
-
-
 };
+
 exports.getUserEmailById = async (req, res) => {
     const { id } = req.params; // Get the id from the route parameter
 

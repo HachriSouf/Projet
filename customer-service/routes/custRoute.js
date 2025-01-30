@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const customerController = require('../controllers/CustController'); // Path to your controller
+const customerController = require('../controllers/CustController'); 
 
 router.post('/createCustomer', customerController.createCustomer);
-router.delete('/delete-customer', customerController.deleteCustomer);
+router.delete('/delete-customer', customerController.deleteCustomerByUserId);
 router.get('/all-customers', customerController.findAllCustomers);
-router.get('/:username', customerController.findCustomerByUsername);
-router.put('/:username', customerController.updateCustomerByUsername);
-router.delete('/soft-delete/:username', customerController.softDeleteCustomer);
+router.get('/:user_id', customerController.findCustomerByUserId);
+router.put('/:user_id', customerController.updateCustomerByUserId);
+router.delete('/soft-delete/:user_id', customerController.softDeleteCustomerByUserId);
 
 module.exports = router;

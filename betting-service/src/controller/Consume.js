@@ -30,74 +30,66 @@ const consumeMatchEndedMessages = async () => {
 
         const { matchId, homeTeam, awayTeam, score, date, status } = matchData;
 
-        // Verify the match status is completed
+        // Vérifie si le match est terminé
         if (status !== "completed") {
           console.log(`Match ${matchId} is not completed. Skipping processing.`);
           return;
         }
 
-        // Retrieve all bets associated with the match
+        // Récupérer tous les paris liés au match
         const bets = await Bet.find({ matchId });
         if (bets.length === 0) {
           console.log(`No bets found for match ${matchId}.`);
           return;
         }
 
-        const allCustomersResponse = await customerService.get(`/customer/all-customers`);
-        const allCustomers = allCustomersResponse.data.customers;
-        console.log("All customers:", allCustomers);
-
-        if (!allCustomers || allCustomers.length === 0) {
-          console.error("No customers found.");
-          return;
-        }
-
-        // Process each bet
+        // Traiter chaque pari individuellement
         for (const bet of bets) {
           let isWin = false;
 
-          // Check if the bet is a win based on the selectedOutcome
+          // Vérification du résultat du pari
           if (bet.selectedOutcome === "1" && score.home > score.away) {
-            isWin = true; // Home team wins
+            isWin = true;
           } else if (bet.selectedOutcome === "2" && score.away > score.home) {
-            isWin = true; // Away team wins
+            isWin = true;
           } else if (bet.selectedOutcome === "X" && score.home === score.away) {
-            isWin = true; // Draw
+            isWin = true;
           }
 
           bet.status = isWin ? "win" : "lost";
           await bet.save();
           console.log(`Bet ${bet._id} updated to status: ${bet.status}`);
 
-          // Include detailed information for winners
+          // Si le pari est gagnant, récupérer les infos du client via son user_id
           if (isWin) {
-            const customer = allCustomers.find((cust) => cust.user_id === String(bet.userId));
-
-            if (!customer) {
-              console.error(`Customer not found for userId: ${bet.userId}`);
-              continue;
-            }
-
-            const username = customer.username;
-
-            const updatedBalance = customer.balance + bet.potentialWin;
-            await customerService.put(`/customer/${username}`, { balance: updatedBalance });
-
-            console.log(
-              `Balance updated for user ${username}: New balance = ${updatedBalance}`
-            );
-
-            // Get the email of the user
             try {
+              // Récupérer les informations du client
+              const customerResponse = await customerService.get(`/customer/${bet.userId}`);
+              const customer = customerResponse.data.customer;
+
+              // Récupérer l'email de l'utilisateur
               const emailResponse = await authService.get(`/auth/user/${bet.userId}`);
               const email = emailResponse.data.email;
 
-              // Add all the required information to send to the notification service
+              if (!customer) {
+                console.error(`Customer not found for userId: ${bet.userId}`);
+                continue;
+              }
+
+              const username = customer.username;
+              const updatedBalance = customer.balance + bet.potentialWin;
+
+              // Mettre à jour le solde du client
+              await customerService.put(`/customer/${bet.userId}`, { balance: updatedBalance });
+
+              console.log(`Balance updated for user ${username}: New balance = ${updatedBalance}`);
+
+              // Préparer les données à envoyer à la notification
               const betWithDetails = {
                 email,
                 username,
                 matchId,
-                matchDate: date, // From the match data
+                matchDate: date,
                 homeTeam,
                 awayTeam,
                 score,
@@ -109,10 +101,11 @@ const consumeMatchEndedMessages = async () => {
 
               console.log(`Prepared detailed data for bet ${bet._id}:`, betWithDetails);
 
-              // Send detailed information to the notification service queue
+              // Envoyer les infos à la queue de notification
               await sendBetWinToQueue(betWithDetails);
-            } catch (err) {
-              console.error(`Error retrieving email for userId ${bet.userId}:`, err.message);
+              console.log(`Bet win notification sent for user: ${username} (${email})`);
+            } catch (error) {
+              console.error(`Error retrieving customer or email for userId ${bet.userId}:`, error.message);
             }
           }
         }

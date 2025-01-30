@@ -88,7 +88,7 @@ const customerService = axios.create({
           .json({ message: "You need to verify your account to play a bet" });
       }
       // Vérifier le client via Customer-Service
-      const customerResponse = await customerService.get(`/customer/${username}`);
+      const customerResponse = await customerService.get(`/customer/${authResponse.data.user._id}`);
       const customer = customerResponse.data.customer;
       if (!customer) {
         return res.status(404).json({ message: "Customer not found" });
@@ -140,7 +140,7 @@ const customerService = axios.create({
   
       await newBet.save();
   
-      await customerService.put(`/customer/${username}`, {
+      await customerService.put(`/customer/${authResponse.data.user._id}`, {
         balance: customer.balance - betAmount,
       });
   
@@ -187,7 +187,7 @@ const customerService = axios.create({
           .json({ message: "You need to verify your account to play a bet" });
       }
       
-      const customerResponse = await customerService.get(`/customer/${username}`);
+      const customerResponse = await customerService.get(`/customer/${authResponse.data.user._id}`);  
       const customer = customerResponse.data.customer;
   
       if (!customer || customer.balance < betAmount) {
@@ -236,7 +236,7 @@ const customerService = axios.create({
       await combinedBet.save();
   
       // Update user balance
-      await customerService.put(`/customer/${username}`, {
+      await customerService.put(`/customer/${authResponse.data.user._id}`, {
         balance: customer.balance - betAmount,
       });
   

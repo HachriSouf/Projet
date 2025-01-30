@@ -44,87 +44,83 @@ exports.findAllCustomers = async (req, res) => {
 };
 
 // Fonction pour récupérer un client par son username
-exports.findCustomerByUsername = async (req, res) => {
+exports.findCustomerByUserId = async (req, res) => {
   try {
-    const { username } = req.params; // Récupération de l'username depuis les paramètres de la requête
+    const { user_id } = req.params; // Récupération du user_id depuis les paramètres de la requête
 
-    const customer = await Customer.findOne({ username }); // Recherche du client correspondant à l'username
+    const customer = await Customer.findOne({ user_id }); // Recherche du client correspondant au user_id
     if (!customer) {
-      return res.status(404).json({ message: 'Customer not found' }); // Retourne une erreur si le client n'est pas trouvé
+      return res.status(404).json({ message: "Customer not found" }); // Retourne une erreur si le client n'est pas trouvé
     }
 
     res.status(200).json({ customer }); // Retourne les détails du client
   } catch (error) {
-    // Gestion des erreurs lors de la recherche
-    console.error('Error fetching customer by username:', error);
-    res.status(500).json({ message: 'Failed to fetch customer' });
+    console.error("Error fetching customer by user_id:", error);
+    res.status(500).json({ message: "Failed to fetch customer" });
   }
 };
 
-// Fonction pour mettre à jour les informations d'un client
-exports.updateCustomerByUsername = async (req, res) => {
+// Fonction pour mettre à jour les informations d'un client par user_id
+exports.updateCustomerByUserId = async (req, res) => {
   try {
-    const { username } = req.params; // Récupération de l'username depuis les paramètres de la requête
+    const { user_id } = req.params; // Récupération du user_id depuis les paramètres de la requête
     const updateData = req.body; // Données à mettre à jour
 
     // Recherche et mise à jour du client correspondant
     const updatedCustomer = await Customer.findOneAndUpdate(
-      { username }, // Critère de recherche basé sur l'username
+      { user_id }, // Critère de recherche basé sur user_id
       updateData, // Données à mettre à jour
       { new: true, runValidators: true } // Options pour retourner le document mis à jour et valider les données
     );
 
     if (!updatedCustomer) {
-      return res.status(404).json({ message: 'Customer not found' }); // Retourne une erreur si le client n'est pas trouvé
+      return res.status(404).json({ message: "Customer not found" });
     }
 
-    res.status(200).json({ customer: updatedCustomer }); // Retourne le client mis à jour
+    res.status(200).json({ customer: updatedCustomer });
   } catch (error) {
-    // Gestion des erreurs lors de la mise à jour
-    console.error('Error updating customer:', error);
-    res.status(500).json({ message: 'Failed to update customer' });
+    console.error("Error updating customer:", error);
+    res.status(500).json({ message: "Failed to update customer" });
   }
 };
 
-// Fonction pour effectuer une suppression "douce" d'un client
-exports.softDeleteCustomer = async (req, res) => {
+// Fonction pour effectuer une suppression "douce" d'un client par user_id
+exports.softDeleteCustomerByUserId = async (req, res) => {
   try {
-    const { username } = req.params; // Récupération de l'username depuis les paramètres
+    const { user_id } = req.params; // Récupération du user_id depuis les paramètres
 
-    const customer = await Customer.findOne({ username }); // Recherche du client par username
+    const customer = await Customer.findOne({ user_id }); // Recherche du client par user_id
     if (!customer) {
-      return res.status(404).json({ message: 'Customer not found' }); // Retourne une erreur si le client n'est pas trouvé
+      return res.status(404).json({ message: "Customer not found" });
     }
 
     // Marque le client comme supprimé en ajoutant une date de suppression
     customer.deletedAt = new Date();
     await customer.save();
 
-    res.status(200).json({ message: 'Customer soft deleted successfully' }); // Confirmation de la suppression "douce"
+    res.status(200).json({ message: "Customer soft deleted successfully" });
   } catch (error) {
-    // Gestion des erreurs lors de la suppression
-    console.error('Error during soft delete:', error);
-    res.status(500).json({ message: 'Failed to soft delete customer' });
+    console.error("Error during soft delete:", error);
+    res.status(500).json({ message: "Failed to soft delete customer" });
   }
 };
 
-// Fonction pour supprimer définitivement un client
-exports.deleteCustomer = async (req, res) => {
+// Fonction pour supprimer définitivement un client par user_id
+exports.deleteCustomerByUserId = async (req, res) => {
   try {
-    const { username } = req.body; // Récupération de l'username depuis le corps de la requête
+    const { user_id } = req.body; // Récupération du user_id depuis le corps de la requête
 
-    const customer = await Customer.findOne({ username }); // Recherche du client correspondant
+    const customer = await Customer.findOne({ user_id }); // Recherche du client correspondant
     if (!customer) {
-      return res.status(404).json({ message: "Customer not found" }); // Retourne une erreur si le client n'est pas trouvé
+      return res.status(404).json({ message: "Customer not found" });
     }
 
     // Suppression définitive du client de la base de données
-    await Customer.deleteOne({ username });
+    await Customer.deleteOne({ user_id });
 
-    res.status(200).json({ message: "Customer deleted successfully" }); // Confirmation de la suppression définitive
+    res.status(200).json({ message: "Customer deleted successfully" });
   } catch (err) {
-    // Gestion des erreurs lors de la suppression
-    console.error('Error during customer deletion:', err);
+    console.error("Error during customer deletion:", err);
     res.status(500).json({ message: "Server error" });
   }
 };

@@ -199,7 +199,7 @@ const authService = axios.create({
     }
 });
 
-  router.get('/:matchId',verifyBookmaker , async (req, res) => {
+  router.get('/:matchId' , async (req, res) => {
     try {
       const { matchId } = req.params;
   
@@ -217,7 +217,7 @@ const authService = axios.create({
 
   
 
-  router.delete('/:matchId', verifyBookmaker, async (req, res) => {
+  router.delete('/:matchId', async (req, res) => {
     try {
       const { matchId } = req.params;
   

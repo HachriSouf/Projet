@@ -34,3 +34,5 @@ catch(err){
     res.status(500).json({ message: 'Services didnt start !' });
 }
 });
+
+module.exports = router;

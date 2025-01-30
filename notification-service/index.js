@@ -395,6 +395,127 @@ The Real Deal Team`;
 
 
 ///////////////////////////////////////////////
+
+
+await amqpService.consumeFromQueue("Combined_WIN", async (msg) => {
+  if (msg) {
+    console.log("Message received from queue: Combined_WIN");
+    const betData = JSON.parse(msg.content.toString());
+    console.log("Processing combined bet win data:", betData);
+
+    const { email, username, potentialWin, updatedBalance, matchDetails } = betData;
+
+    // Debugging: Ensure matchDetails is received
+    if (!matchDetails || !Array.isArray(matchDetails) || matchDetails.length === 0) {
+      console.error("matchDetails is missing or empty:", matchDetails);
+      return;
+    }
+
+    // Debugging: Ensure email is received
+    if (!email) {
+      console.error("Email is missing in betData:", betData);
+      return;
+    }
+
+    // Construct match list for HTML email
+    const matchListHTML = matchDetails
+      .map(
+        (match) => `
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 8px;">${match.homeTeam} vs ${match.awayTeam}</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">${match.date || "Unknown Date"}</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">${
+            match.score ? `${match.score.home} - ${match.score.away}` : "Score Not Available"
+          }</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">${
+            match.selectedOutcome === "1"
+              ? match.homeTeam
+              : match.selectedOutcome === "2"
+              ? match.awayTeam
+              : "Draw"
+          }</td>
+        </tr>`
+      )
+      .join("");
+
+    // Construct match list for plain text email
+    const matchListText = matchDetails
+      .map(
+        (match) =>
+          `- ${match.homeTeam} vs ${match.awayTeam} | Date: ${match.date || "Unknown Date"} | Score: ${
+            match.score ? `${match.score.home} - ${match.score.away}` : "N/A"
+          } | Your Pick: ${
+            match.selectedOutcome === "1" ? match.homeTeam : match.selectedOutcome === "2" ? match.awayTeam : "Draw"
+          }`
+      )
+      .join("\n");
+
+    // HTML email content
+    const htmlMessage = `
+    <div style="font-family: Arial, sans-serif; line-height: 1.8; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+      <h1 style="text-align: center; color: #28a745;">Congratulations, You Won!</h1>
+      <p>Hi <strong>${username}</strong>,</p>
+      <p>Your combined bet was successful! Here are the details:</p>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f8f8f8;">Match</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f8f8f8;">Date</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f8f8f8;">Score</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f8f8f8;">Your Pick</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${matchListHTML}
+        </tbody>
+      </table>
+      <p><strong>Total Winnings:</strong> $${potentialWin}</p>
+      <p>Your updated balance is now <strong>$${updatedBalance}</strong>.</p>
+      <p>Thank you for betting with <strong>The Real Deal</strong>. See you for the next match!</p>
+      <p style="text-align: center; margin-top: 20px;">
+        <a href="https://therealdeal.com" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #28a745; text-decoration: none; border-radius: 5px;">Visit Us</a>
+      </p>
+    </div>`;
+
+    // Plain text email content
+    const textMessage = `
+Congratulations, You Won!
+
+Hi ${username},
+
+Your combined bet was successful! Here are the details:
+
+${matchListText}
+
+Total Winnings: $${potentialWin}
+Updated Balance: $${updatedBalance}
+
+Thank you for betting with The Real Deal. See you for the next match!`;
+
+    const subject = "Congratulations! You Won!";
+    const from = "servicesmicro46@gmail.com";
+    const fromLabel = "The Real Deal";
+    const to = email || "placeholder@example.com";
+
+    try {
+      console.log("Sending email to:", to);
+      await sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
+      console.log("Combined bet win notification email sent successfully to:", to);
+    } catch (error) {
+      console.error("Error sending combined bet win notification email:", error);
+    }
+  } else {
+    console.log("No message received from queue: Combined_WIN.");
+  }
+});
+
+
+
+
+
+//////////////////
+
+
   } catch (error) {
     console.error("Error during RabbitMQ connection or consumption:", error);
   }

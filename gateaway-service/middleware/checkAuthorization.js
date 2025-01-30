@@ -1,8 +1,12 @@
 const axios = require("axios");
-const jwt = require("jsonwebtoken");
 
+const authService = axios.create({
+  baseURL: "http://trd_project-auth-service-1:3000",
+  timeout: 5000,
+  headers: { "Content-Type": "application/json" }
+});
 
-const authMiddleware = async (req, res, next) => {
+const  adminMiddleware = async (req, res, next) => {
   try {
 
     const token = req.header('Authorization') && req.header('Authorization').split(' ')[1];
@@ -11,18 +15,46 @@ const authMiddleware = async (req, res, next) => {
         return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const authResponse = await authService.get("/auth/verify", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
-    req.user = decoded;
+
+    const role = authResponse.data.user.role;
+    console.log("les données :",authResponse.data.user);
+    console.log("status :", role);
+
+
+    if (authResponse.status !== 200) {
+      return res.status(401).json({ message: "Unauthorized: Invalid token" });
+    }
+
+    if (role !== 2) {
+      return res.status(403).json({ message: "Vous devez être admin pour pouvoir utiliser cette fonctionnalité" });
+    }
 
    
-    const authService = axios.create({
-        baseURL: "http://trd_project-auth-service-1:3000",
-        timeout: 5000,
-        headers: {  Authorization: `Bearer ${token}` },
-      });
+    next();
+  } catch (error) {
+    console.error("Authentication error:", error.message);
+    return res.status(401).json({ message: "Unauthorized: Invalid or expired token" });
+  }
+
+};
+
+const authMiddleware = async (req, res, next) => {
+  try {
+
+    const token = req.header('Authorization') && req.header('Authorization').split(' ')[1];
+    
+    if (!token) {
+        return res.status(401).json({ message: 'No token provided' });
+    }   
       
-    const authResponse = await authService.post("/auth/verify", {});
+    const authResponse = await authService.get("/auth/verify", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
 
 
     if (authResponse.status !== 200) {
@@ -37,7 +69,7 @@ const authMiddleware = async (req, res, next) => {
   }
 };
 
-module.exports = authMiddleware;
+module.exports = { adminMiddleware };
 
 
 
