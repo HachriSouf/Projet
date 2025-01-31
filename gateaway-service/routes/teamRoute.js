@@ -1,0 +1,57 @@
+const express = require("express");
+const axios = require("axios");
+
+
+const router = express.Router();
+
+const teamService = axios.create({
+    baseURL: "http://trd_project-team-service-1:4006",
+    timeout: 5000,
+    headers: { "Content-Type": "application/json" },
+  });
+
+  router.post("/import", async (req, res) => {
+    try {
+      const resultat = await teamService.post("/teams/import", req.body, {
+        headers: { Authorization: req.header("Authorization") }, 
+      });
+  
+      return res.json(resultat.data);
+  
+    } catch (error) {
+      console.error("Error occurred:", error.message);
+  
+      if (error.response) {
+        console.log("Error response data:", error.response.data);
+        return res.status(error.response.status).json({
+          error: error.response.data,
+        });
+      }
+  
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+
+  router.get("/", async (req, res) => {
+    try {
+      const resultat = await teamService.get("/teams", req.body, {
+        headers: { Authorization: req.header("Authorization") }, 
+      });
+  
+      return res.json(resultat.data);
+  
+    } catch (error) {
+      console.error("Error occurred:", error.message);
+  
+      if (error.response) {
+        console.log("Error response data:", error.response.data);
+        return res.status(error.response.status).json({
+          error: error.response.data,
+        });
+      }
+  
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+
+  module.exports = router;

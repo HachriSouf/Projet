@@ -516,6 +516,63 @@ Thank you for betting with The Real Deal. See you for the next match!`;
 //////////////////
 
 
+await amqpService.consumeFromQueue("payement_sucess", async (msg) => {
+  if (msg) {
+    console.log("Message received from queue: payement_sucess");
+    const payment = JSON.parse(msg.content.toString());
+    console.log("Processing payment success data:", payment);
+
+    // Construire le message d'email
+    const htmlMessage = `
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+        <div style="text-align: center;">
+          <img src="https://yourcompany.com/logo.png" alt="Logo" style="width: 100px; margin-bottom: 20px;" />
+        </div>
+        <h1 style="text-align: center; color: #28a745;">💳 Payment Successful!</h1>
+        <p>Hi <strong>${payment.username}</strong>,</p>
+        <p>Your payment of <strong>${payment.amount}€</strong> has been successfully processed.</p>
+        <p><strong>Transaction ID:</strong> ${payment.transactionId}</p>
+        <p><strong>Transaction Date:</strong> ${new Date(payment.transactionDate).toLocaleString()}</p>
+        <p>Your new balance is <strong>${payment.newBalance}€</strong>.</p>
+        <p>Thank you for using <strong>The Real Deal</strong>.</p>
+        <p style="text-align: center; margin-top: 20px;">
+          <a href="https://therealdeal.com" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #28a745; text-decoration: none; border-radius: 5px;">View Account</a>
+        </p>
+      </div>`;
+
+    const textMessage = `
+Payment Successful!
+
+Hi ${payment.username},
+
+Your payment of ${payment.amount}€ has been successfully processed.
+
+Transaction ID: ${payment.transactionId}
+Transaction Date: ${new Date(payment.transactionDate).toLocaleString()}
+New Balance: ${payment.newBalance}€
+
+Thank you for using The Real Deal.
+`;
+
+    const subject = "💳 Payment Successful - The Real Deal";
+    const from = "servicesmicro46@gmail.com";
+    const fromLabel = "The Real Deal";
+    const to = payment.email;
+
+    try {
+      await sendMail(textMessage, htmlMessage, subject, to, from, fromLabel);
+      console.log("Payment success email sent successfully to:", to);
+    } catch (error) {
+      console.error("Error sending payment success email:", error);
+    }
+  } else {
+    console.log("No message received from queue: payement_sucess.");
+  }
+});
+
+////////////////////////////////
+
+
   } catch (error) {
     console.error("Error during RabbitMQ connection or consumption:", error);
   }

@@ -74,15 +74,15 @@ const username = authResponse.data.user.username;
       transactionId: transaction._id,
       transactionDate: transaction.transactionDate,
     };
-    const customerResponse = await customerService.get(`/customer/${username}`);
+    const customerResponse = await customerService.get(`/customer/${userId}`);
     const currentBalance = customerResponse.data.customer.balance;
 
     const newBalance = currentBalance + amount;
-    await customerService.put(`/customer/${username}`, { balance: newBalance });
+    await customerService.put(`/customer/${userId}`, { balance: newBalance });
 
     console.log(`Balance updated for user ${username}: ${newBalance}`);
 
-    const sentMessage = { ...message, newBalance,  email: authResponse.data.user.email};
+    const sentMessage = { ...message, newBalance,username ,  email: authResponse.data.user.email};
     
     sendPayementSucessMessageToQueue(sentMessage);
    

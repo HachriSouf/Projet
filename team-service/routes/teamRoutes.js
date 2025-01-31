@@ -9,7 +9,7 @@ const axios = require('axios');
 
 router.post('/import', async (req, res) => {
   try {
-    console.log('Début de l\'importation...');
+    console.log("Début de l'importation...");
 
     // Liste des fichiers à importer
     const files = [
@@ -17,8 +17,11 @@ router.post('/import', async (req, res) => {
       { filePath: path.join(__dirname, 'csvjson.json'), format: 'custom' }
     ];
 
+    let totalInserted = 0;
+    let totalSkipped = 0;
+
     for (const file of files) {
-      console.log('Chemin du fichier JSON :', file.filePath);
+      console.log("Chemin du fichier JSON :", file.filePath);
 
       if (fs.existsSync(file.filePath)) {
         const rawData = JSON.parse(fs.readFileSync(file.filePath, 'utf-8'));
@@ -43,18 +46,39 @@ router.post('/import', async (req, res) => {
 
         console.log(`Données adaptées pour le fichier ${file.filePath}:`, adaptedData);
 
-        // Insérer les données dans MongoDB
-        await Team.insertMany(adaptedData);
-        console.log(`Données insérées avec succès depuis ${file.filePath}`);
+        let insertedCount = 0;
+        let skippedCount = 0;
+
+        for (const team of adaptedData) {
+          const existingTeam = await Team.findOne({ name: team.name });
+
+          if (!existingTeam) {
+            await Team.create(team);
+            insertedCount++;
+          } else {
+            skippedCount++;
+          }
+        }
+
+        console.log(`Données insérées depuis ${file.filePath}: ${insertedCount} nouvelles équipes.`);
+        console.log(`Équipes déjà existantes ignorées: ${skippedCount}`);
+
+        totalInserted += insertedCount;
+        totalSkipped += skippedCount;
       } else {
         console.error(`Le fichier ${file.filePath} n'existe pas.`);
       }
     }
 
-    res.status(200).send('Tous les fichiers ont été importés avec succès !');
+    res.status(200).json({
+      message: "Importation terminée.",
+      inserted: totalInserted,
+      skipped: totalSkipped,
+    });
+
   } catch (err) {
-    console.error('Erreur durant l\'importation :', err);
-    res.status(500).send('Erreur lors de l\'importation des équipes.');
+    console.error("Erreur durant l'importation :", err);
+    res.status(500).json({ error: "Erreur lors de l'importation des équipes." });
   }
 });
 

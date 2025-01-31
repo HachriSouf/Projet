@@ -97,6 +97,7 @@ exports.login = async (req, res) => {
     }
 };
 
+
 exports.verify = async (req, res) => {
     const token = req.header('Authorization') && req.header('Authorization').split(' ')[1];
     console.log(token);

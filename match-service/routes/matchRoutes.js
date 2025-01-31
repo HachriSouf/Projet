@@ -4,7 +4,6 @@ const Match = require('../models/Match');
 const router = express.Router();
 const AMQPService = require('../AMQPService/AMQPService');
 
-const teamServiceUrl = process.env.TEAM_SERVICE_URL;
 
 
 
