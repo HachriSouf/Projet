@@ -1,39 +1,249 @@
-version: '3.8'
+volumes:
+  rabbitmq-data:
 
 services:
+
+  customer-service:
+    build:
+      context: ./customer-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./customer-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./customer-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+
   auth-service:
     build:
       context: ./auth-service
       dockerfile: Dockerfile
     volumes:
       - ./auth-service:/app
+      - ./node_modules:/app/node_modules
     ports:
-      - 3000:3000
+      - "3000:3000"
     env_file:
       - ./auth-service/.env
     networks:
       - shrp-ntwrk
     depends_on:
-      auth-db:
+      mongo-db:
         condition: service_healthy
 
-  auth-db:
+  mongo-db:
     image: mongo:latest
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: auth_db
-    volumes:
-      - ./auth-db/data:/data/db                  
-      - ./auth-db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d  
+      MONGO_INITDB_DATABASE: mydb  
+    ports:
+      - "27017:27017"  
     networks:
       - shrp-ntwrk
     healthcheck:
-      test: ["CMD", "mongo", "--eval", "db.runCommand('ping')"]
+      test: ["CMD", "echo", "fake healthcheck"]
       interval: 10s
       timeout: 5s
+      retries: 1
+      start_period: 5s
+
+  gateaway-service:
+    build:
+      context: ./gateaway-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./gateaway-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./gateaway-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      auth-service:
+        condition: service_started  
+      customer-service:
+        condition: service_started  
+      betting-service:
+        condition: service_started
+      payement-service:
+        condition: service_started
+      match-service:
+        condition: service_started
+      odd-service:
+        condition: service_started
+      bookmaker-service:
+        condition: service_started
+      team-service:
+        condition: service_started
+      notification-service:
+        condition: service_started 
+
+  notification-service:
+    build:
+      context: ./notification-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./notification-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "3001:3001" 
+    env_file:
+      - ./notification-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      auth-service:
+        condition: service_started
+      customer-service:
+        condition: service_started
+      betting-service:
+        condition: service_started
+      payement-service:
+        condition: service_started
+      match-service:
+        condition: service_started
+      odd-service:
+        condition: service_started
+    restart: on-failure
+
+
+        
+  rabbitmq:
+    image: rabbitmq:3-management
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: ["CMD", "true"]
+      interval: 5s
+      timeout: 5s
       retries: 3
-      start_period: 10s
+      start_period: 80s
+    volumes:
+    - rabbitmq-data:/var/lib/rabbitmq
+    ports: 
+    - "5672:5672"   
+    - "15672:15672" 
+    networks:
+    - shrp-ntwrk
+
+  betting-service:
+    build:
+      context: ./betting-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./betting-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./betting-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+        
+  payement-service:
+    build:
+      context: ./payement-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./payement-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4001:4001"
+    env_file:
+      - ./payement-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+  match-service:
+    build:
+      context: ./match-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./match-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4007:4007"
+    env_file:
+      - ./match-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+      team-service: 
+        condition: service_started
+        
+
+  odd-service:
+    build:
+      context: ./odd-service
+      dockerfile: Dockerfile
+    volumes:
+      - ./odd-service:/app
+      - ./node_modules:/app/node_modules
+    ports:
+      - "4005:4005"
+    env_file:
+      - ./odd-service/.env
+    networks:
+      - shrp-ntwrk
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy     
+  
+  team-service:
+    build:
+      context: ./team-service
+    ports:
+      - 4006:4006
+    env_file:
+      - ./team-service/.env
+    volumes:
+      - ./team-service:/app
+      - ./node_modules:/app/node_modules
+    depends_on:
+      mongo-db:
+        condition: service_healthy
+    networks:
+      - shrp-ntwrk
+  bookmaker-service:
+    build:
+      context: ./bookmaker-service
+    ports:
+      - 4004:4004 
+    env_file:
+      - ./bookmaker-service/.env 
+    volumes:
+      - ./bookmaker-service:/app
+      - ./node_modules:/app/node_modules 
+    depends_on:
+      mongo-db:
+        condition: service_healthy 
+    networks:
+      - shrp-ntwrk 
 
 networks:
   shrp-ntwrk:

@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Arsenal",
+    "country": "ENG",
+    "coefficient": 76.000
+  },
+  {
+    "name": "Aston Villa",
+    "country": "ENG",
+    "coefficient": 32.000
+  },
+  {
+    "name": "Liverpool",
+    "country": "ENG",
+    "coefficient": 110.000
+  },
+  {
+    "name": "Manchester City",
+    "country": "ENG",
+    "coefficient": 147.000
+  },
+  {
+    "name": "Atlético de Madrid",
+    "country": "ESP",
+    "coefficient": 82.000
+  },
+  {
+    "name": "Barcelona",
+    "country": "ESP",
+    "coefficient": 98.000
+  },
+  {
+    "name": "Girona",
+    "country": "ESP",
+    "coefficient": 12.000
+  },
+  {
+    "name": "Real Madrid",
+    "country": "ESP",
+    "coefficient": 134.000
+  },
+  {
+    "name": "Bayern Munich",
+    "country": "GER",
+    "coefficient": 135.000
+  },
+  {
+    "name": "Borussia Dortmund",
+    "country": "GER",
+    "coefficient": 81.000
+  },
+  {
+    "name": "RB Leipzig",
+    "country": "GER",
+    "coefficient": 74.000
+  },
+  {
+    "name": "Bayer Leverkusen",
+    "country": "GER",
+    "coefficient": 58.000
+  },
+  {
+    "name": "Stuttgart",
+    "country": "GER",
+    "coefficient": 31.000
+  },
+  {
+    "name": "Atalanta",
+    "country": "ITA",
+    "coefficient": 61.000
+  },
+  {
+    "name": "Bologna",
+    "country": "ITA",
+    "coefficient": 27.000
+  },
+  {
+    "name": "Inter Milan",
+    "country": "ITA",
+    "coefficient": 92.000
+  },
+  {
+    "name": "Juventus",
+    "country": "ITA",
+    "coefficient": 87.000
+  },
+  {
+    "name": "AC Milan",
+    "country": "ITA",
+    "coefficient": 62.000
+  },
+  {
+    "name": "Brest",
+    "country": "FRA",
+    "coefficient": 15.000
+  },
+  {
+    "name": "Lille",
+    "country": "FRA",
+    "coefficient": 47.000
+  },
+  {
+    "name": "Monaco",
+    "country": "FRA",
+    "coefficient": 46.000
+  },
+  {
+    "name": "Paris Saint-Germain",
+    "country": "FRA",
+    "coefficient": 118.000
+  },
+  {
+    "name": "Salzburg",
+    "country": "AUT",
+    "coefficient": 48.000
+  },
+  {
+    "name": "Sturm Graz",
+    "country": "AUT",
+    "coefficient": 36.000
+  },
+  {
+    "name": "Feyenoord",
+    "country": "NED",
+    "coefficient": 51.000
+  },
+  {
+    "name": "PSV Eindhoven",
+    "country": "NED",
+    "coefficient": 45.000
+  },
+  {
+    "name": "Benfica",
+    "country": "POR",
+    "coefficient": 67.000
+  },
+  {
+    "name": "Sporting CP",
+    "country": "POR",
+    "coefficient": 49.000
+  },
+  {
+    "name": "Club Brugge",
+    "country": "BEL",
+    "coefficient": 44.000
+  },
+  {
+    "name": "Dinamo Zagreb",
+    "country": "CRO",
+    "coefficient": 42.000
+  },
+  {
+    "name": "Sparta Prague",
+    "country": "CZE",
+    "coefficient": 37.000
+  },
+  {
+    "name": "Celtic",
+    "country": "SCO",
+    "coefficient": 47.000
+  },
+  {
+    "name": "Red Star Belgrade",
+    "country": "SRB",
+    "coefficient": 38.000
+  },
+  {
+    "name": "Slovan Bratislava",
+    "country": "SVK",
+    "coefficient": 28.000
+  },
+  {
+    "name": "Young Boys",
+    "country": "SUI",
+    "coefficient": 39.000
+  },
+  {
+    "name": "Shakhtar Donetsk",
+    "country": "UKR",
+    "coefficient": 55.000
+  }
+]

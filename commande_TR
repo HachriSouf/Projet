@@ -1,0 +1,65 @@
+//les req body a changer selon ce qu'on va fait
+
+Post localhost:8000/auth/sign-up/
+{ "username":"", "firstname":"", "lastname":"", "Number":"","password":"", "email":""}
+Post localhost:4006/teams/import/
+Get localhost:8000/teams/
+Post localhost:8000/matches/
+{ "homeTeam":" ID d'une equipe", "awayTeam":"//"}
+Post localhost:8000/bet/
+// a changer 
+authorization token = bearer 'refreshToken Ici'
+
+{
+    "matchId":"679d32a389ae501972208132", 
+    "betAmount":"100", 
+    "selectedOutcome":"1"
+}
+
+Post localhost:8000/payement/process-payment
+
+{"amount": "1000", "cardHolderName":"Mamoune", "cardNumber":"3443555655367788", "expiryDate":"06/27", "cvv":"344"}
+
+Post localhost:8000/matches/start/:matchID
+
+Post localhost:8000/bet/combined
+// a changer
+{
+  "bets": [
+    {
+      "matchId": "679d381c89ae501972208138",
+      "selectedOutcome": "1"
+    },
+    {
+      "matchId": "679d383d89ae50197220813a",
+      "selectedOutcome": "1"
+    }
+  ],
+  "betAmount": 50
+}
+//start les deux matches. 
+
+Cree bookmaker
+il faut d'abbord avoir le refresh token de l'admin pour cela 
+
+Post localhost:8000/auth/login/
+// compte génerique pour un seul compte admin utiliser les memes valeurs.
+
+{ "password":"admin", "email":"admin@admin.com"} 
+
+Prendre le refresh l'utiliser 
+authorization token = bearer 'refreshToken Ici'
+Post localhost:8000/auth/bookmaker
+
+{ "username":"SalimBtmt", "firstname":"jean", "lastname":"narup", "Number":"02394","password":"azerty", "email":"sboutament@gmail.com"}
+// prendre le refresh token
+authorization token = bearer 'refreshToken Ici'
+
+PATCH localhost:8000/odds/boost/{matchId}
+body : {"homeOdd":"3", "drawOdd":"2", "awayOdd":"4"} // a changer 
+
+GET localhost:8000/odds/propose
+//envoie un mail a tous les utilisateurs qui sont client pour voir les cotes attractive et les utiliser pour un bet.
+
+
+
