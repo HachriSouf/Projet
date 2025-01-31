@@ -53,7 +53,7 @@ Avant de commencer, assurez-vous d'avoir installé :
 
 ## **Tests et API**
 
-- Un fichier nommé **`commande_TD`** est fourni dans le projet.
+- Un fichier nommé **`commande.md`** est fourni dans le projet.
 - Ce fichier contient différentes requêtes API permettant de tester l'application TRD.
 
 ---
