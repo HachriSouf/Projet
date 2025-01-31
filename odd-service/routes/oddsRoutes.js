@@ -43,13 +43,11 @@ const authService = axios.create({
     try {
       const { matchId } = req.params;
   
-      // Vérifiez si des cotes existent pour ce match
       const existingOdd = await Odd.findOne({ matchId });
       if (!existingOdd) {
         return res.status(404).json({ error: 'Odds not found for this match.' });
       }
   
-      // Mettre à jour les cotes pour retirer le boost
       const updatedOdd = await Odd.findOneAndUpdate(
         { matchId },
         {

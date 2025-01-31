@@ -121,7 +121,6 @@ router.post('/start/:id', async (req, res) => {
     match.status = 'in_progress';
     await match.save();
 
-    // Envoyer un message à la queue "Match_started"
     await sendMatchStartedToQueue({
       matchId: match._id,
       homeTeam: match.homeTeam,
@@ -140,19 +139,15 @@ router.post('/start/:id', async (req, res) => {
       },
     });
 
-    // Simuler les scores et attendre 10 secondes avant de terminer le match
     setTimeout(async () => {
-      // const homeScore = Math.floor(Math.random() * 6); // Score entre 0 et 5
-      // const awayScore = Math.floor(Math.random() * 6);
-      const homeScore = 3;
-      const awayScore = 0;
+      const homeScore = Math.floor(Math.random() * 6); 
+      const awayScore = Math.floor(Math.random() * 6);
+    
 
-      // Mettre à jour le match avec les scores finaux
       match.score = { home: homeScore, away: awayScore };
       match.status = 'completed';
       await match.save();
 
-      // Envoyer un message à la queue "Match_ended"
       await sendMatchEndedToQueue({
         matchId: match._id,
         homeTeam: match.homeTeam,
@@ -163,7 +158,7 @@ router.post('/start/:id', async (req, res) => {
       });
 
       console.log(`Match terminé ! Résultat : ${match.homeTeam} ${homeScore} - ${awayScore} ${match.awayTeam}`);
-    }, 10000); // Attendre 10 secondes (10 000 ms)
+    }, 10000); 
   } catch (err) {
     console.error('Erreur lors du démarrage du match :', err);
     res.status(500).send({ error: 'Erreur lors du démarrage du match.' });

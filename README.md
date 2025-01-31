@@ -1,177 +1,75 @@
-# Projet TRD_Project
+# **Projet TRD_Project**
 
-Mamoune Abbad El Andaloussi
-Adam Edekkaki
-Mehdi Thaili
-Soufiane Hachri
+## **Auteurs**
 
-Ce document explique comment configurer, construire et exécuter le projet TRD_Project. Assurez-vous de suivre chaque étape pour garantir le bon fonctionnement de l'ensemble des services.
+- Mamoune Abbad El Andaloussi
+- Adam Edekkaki
+- Mehdi Thaili
+- Soufiane Hachri
+
+## **Description**
+
+Ce document explique comment configurer, construire et exécuter le projet **TRD_Project**. Assurez-vous de suivre chaque étape afin de garantir le bon fonctionnement de l'ensemble des services.
 
 ---
 
-## **Prérequis**
+## **Installation et Lancement**
 
-1. **Docker** et **Docker Compose** :
+### **1. Pré-requis**
 
-   - Assurez-vous que Docker et Docker Compose sont installés sur votre machine.
-   - Vérifiez les versions :
+Avant de commencer, assurez-vous d'avoir installé :
+
+- [Node.js](https://nodejs.org/)
+- [Docker & Docker Compose](https://www.docker.com/)
+
+### **2. Configuration du Projet**
+
+1. **Nom du dossier principal**
+
+   - **Le dossier principal du projet doit être nommé** : `TRD_PROJECT`
+   - Cela est crucial car les conteneurs sont configurés pour fonctionner avec ce nom.
+
+2. **Installation des dépendances**
+
+   - Ouvrez un terminal à la racine du projet et exécutez :
      ```bash
-     docker --version
-     docker-compose --version
+     npm install
      ```
 
-2. **Node.js et npm** (facultatif pour le développement local) :
+3. **Construction et lancement des services**
 
-   - Node.js version 18 ou supérieure.
-   - Vérifiez avec :
+   - Démarrez les services avec la commande :
      ```bash
-     node --version
-     npm --version
+     docker-compose up --build
      ```
 
-3. **Configuration des fichiers `.env`** :
-   - Chaque service dispose de son propre fichier `.env`. Ces fichiers doivent être configurés avec les bonnes variables d'environnement avant de démarrer le projet.
+4. **Gestion des conteneurs**
+   - Si le conteneur **notification-service** ne démarre pas correctement, relancez-le avec :
+     ```bash
+     docker-compose restart notification-service
+     ```
 
 ---
 
-## **Structure du projet**
+## **Tests et API**
 
-Le projet est structuré comme suit :
-
-```
-TRD_Project/
-├── docker-compose.yml
-├── auth-service/
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── .env
-│   └── index.js
-├── customer-service/
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── .env
-│   └── index.js
-├── notification-service/
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── .env
-│   └── index.js
-├── gateaway-service/
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── .env
-│   └── index.js
-├── mongo-db/
-│   └── data/
-└── README.md
-```
+- Un fichier nommé **`commande_TD`** est fourni dans le projet.
+- Ce fichier contient différentes requêtes API permettant de tester l'application TRD.
 
 ---
 
-## **Étapes pour lancer le projet**
+## **Remarques**
 
-### 1. **Cloner le projet**
+- Assurez-vous que Docker Desktop est bien lancé avant d’exécuter `docker-compose up`.
+- Vérifiez que tous les services sont correctement démarrés à l’aide de la commande :
+  ```bash
+  docker ps
+  ```
+- En cas d'erreur, consultez les logs des services pour identifier les problèmes :
+  ```bash
+  docker-compose logs -f
+  ```
 
-Clonez le dépôt sur votre machine locale :
+---
 
-```bash
-git clone <url-du-repo>
-cd TRD_Project
-```
-
-### 2. **Configurer les fichiers `.env`**
-
-Créez les fichiers `.env` dans les dossiers de chaque service, si ce n'est pas déjà fait. Voici des exemples de configuration :
-
-#### **auth-service/.env**
-
-```plaintext
-JWT_SECRET=your_jwt_secret_key
-MESSAGE_BROKER=rabbitmq
-MESSAGE_BROKER_USER=guest
-MESSAGE_BROKER_PASSWORD=guest
-PORT=3000
-```
-
-#### **customer-service/.env**
-
-```plaintext
-MONGODB_URI=mongodb://mongo-db:27017/Customer-service
-PORT=5000
-```
-
-#### **notification-service/.env**
-
-```plaintext
-MESSAGE_BROKER=rabbitmq
-MESSAGE_BROKER_USER=guest
-MESSAGE_BROKER_PASSWORD=guest
-SMTP_USER=your-email@example.com
-SMTP_PASSWORD=your-email-password
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-PORT=3001
-```
-
-#### **gateaway-service/.env**
-
-```plaintext
-PORT=8000
-MESSAGE_BROKER=rabbitmq
-MESSAGE_BROKER_USER=guest
-MESSAGE_BROKER_PASSWORD=guest
-```
-
-### 3. **Construire et démarrer les conteneurs Docker**
-
-Lancez la commande suivante depuis le dossier racine du projet :
-
-```bash
-docker-compose up --build
-```
-
-Cette commande :
-
-- Construit les images Docker pour chaque service.
-- Démarre les conteneurs définis dans `docker-compose.yml`.
-
-### 4. **Vérifier l'état des conteneurs**
-
-Assurez-vous que tous les conteneurs sont en cours d'exécution :
-
-```bash
-docker ps
-```
-
-### 5. **Tester les services**
-
-#### **a. Tester l'auth-service**
-
-Endpoint de création d'utilisateur :
-
-```bash
-curl --request POST \
-  --url http://localhost:3000/auth/register \
-  --header 'Content-Type: application/json' \
-  --data '{
-    "username": "testuser",
-    "password": "securepassword",
-    "email": "testuser@example.com"
-  }'
-```
-
-#### **b. Tester le customer-service**
-
-Endpoint de création de client :
-
-```bash
-curl --request POST \
-  --url http://localhost:5000/customer/createCustomer \
-  --header 'Content-Type: application/json' \
-  --data '{
-    "username": "testuser",
-    "FirstName": "John",
-    "LastName": "Doe",
-    "Number": "123456789"
-  }'
-```
+Avec ce README, votre projet sera plus clair et structuré pour toute personne souhaitant l’installer et le lancer 🚀.

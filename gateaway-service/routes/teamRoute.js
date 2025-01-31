@@ -12,7 +12,7 @@ const teamService = axios.create({
 
   router.post("/import", async (req, res) => {
     try {
-      const resultat = await teamService.post("/teams/import", req.body, {
+      const resultat = await teamService.post("/teams/import", {
         headers: { Authorization: req.header("Authorization") }, 
       });
   

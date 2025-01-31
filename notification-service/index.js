@@ -40,7 +40,7 @@ const readFromQueue = async () => {
             <p>Hi <strong>${customer.FirstName} ${customer.LastName}</strong>,</p>
             <p>We are thrilled to have you with us. Please confirm your registration by clicking the link below:</p>
             <div style="text-align: center; margin: 20px 0;">
-              <a href='http://localhost:8000/api/double-opt-in?t=${customer.registrationToken}'
+              <a href='http://localhost:8000/auth/double-opt-in?t=${customer.registrationToken}'
                  style="display: inline-block; background-color: #007BFF; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; font-size: 16px;">Confirm Registration</a>
             </div>
             <p>If you didn’t request this, please ignore this email.</p>
