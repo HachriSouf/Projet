@@ -1,11 +1,18 @@
 //les req body a changer selon ce qu'on va fait
 
 Post localhost:8000/auth/sign-up/
+
 { "username":"", "firstname":"", "lastname":"", "Number":"","password":"", "email":""}
 Post localhost:4006/teams/import/
+
 Get localhost:8000/teams/
+//pour recuperer les equipes id pour crée un match
+
 Post localhost:8000/matches/
+
+
 { "homeTeam":" ID d'une equipe", "awayTeam":"//"}
+
 Post localhost:8000/bet/
 // a changer 
 authorization token = bearer 'refreshToken Ici'

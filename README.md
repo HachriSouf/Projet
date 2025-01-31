@@ -69,7 +69,3 @@ Avant de commencer, assurez-vous d'avoir installé :
   ```bash
   docker-compose logs -f
   ```
-
----
-
-Avec ce README, votre projet sera plus clair et structuré pour toute personne souhaitant l’installer et le lancer 🚀.
